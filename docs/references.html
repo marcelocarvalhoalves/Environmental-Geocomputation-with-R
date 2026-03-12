@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>References | Environmental Geocomputation with R (Classroom summary)</title>
+  <meta name="description" content="Environmental Geocomputation with R: Textbook and Lab Manual (Short version for the classroom)" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="References | Environmental Geocomputation with R (Classroom summary)" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Environmental Geocomputation with R: Textbook and Lab Manual (Short version for the classroom)" />
+  <meta name="github-repo" content="true" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="References | Environmental Geocomputation with R (Classroom summary)" />
+  
+  <meta name="twitter:description" content="Environmental Geocomputation with R: Textbook and Lab Manual (Short version for the classroom)" />
+  
+
+<meta name="author" content="Marcelo de Carvalho Alves" />
+
+
+<meta name="date" content="2026-03-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Environmental Geocomputation with R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Environmental Geocomputation with R</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://www.routledge.com/Environmental-Geocomputation-with-R-Textbook-and-Lab-Manual/deCarvalhoAlves/p/book/9781041208228" target="blank">Published by CRC Press</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Environmental Geocomputation with R (Classroom summary)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="references" class="section level1 unnumbered hasAnchor">
+<h1>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+Alves, Marcelo Carvalho, Luiz Gonsaga Carvalho, Humberto Alves Barbosa, Luciana Sanches, Marcelo Silva Oliveira, Daniel Furtado Ferreira, and Sabrina Soares Silva. 2020. <span>“<span class="nocase">Human progress and drought sensitivity behavior</span>.”</span> <em>Science of The Total Environment</em> 702 (February): 134966. <a href="https://doi.org/10.1016/j.scitotenv.2019.134966">https://doi.org/10.1016/j.scitotenv.2019.134966</a>.
+</div>
+<div class="csl-entry">
+Appelhans, Tim, Florian Detsch, Christoph Reudenbach Stefan Woellauer, Spaska Forteva, Thomas Nauss, Edzer Pebesma, Kenton Russell, et al. 2020. <em><span class="nocase">mapview: Interactive Viewing of Spatial Data in R</span></em>. <a href="https://github.com/r-spatial/mapview">https://github.com/r-spatial/mapview</a>.
+</div>
+<div class="csl-entry">
+Bivand, Roger S., Edzer Pebesma, and Virgilio Gómez-Rubio. 2013. <em><span class="nocase">Applied Spatial Data Analysis with R</span></em>. 2nd ed. New York, NY: Springer New York. <a href="https://doi.org/10.1007/978-1-4614-7618-4">https://doi.org/10.1007/978-1-4614-7618-4</a>.
+</div>
+<div class="csl-entry">
+Bivand, Roger, Tim Keitt, Barry Rowlingson, Edzer Pebesma, Michael Sumner, Robert Hijmans, Daniel Baston, et al. 2021. <em><span class="nocase">rgdal: Bindings for the ’Geospatial’ Data Abstraction Library</span></em>. <a href="http://rgdal.r-forge.r-project.org https://r-forge.r-project.org/projects/rgdal/">http://rgdal.r-forge.r-project.org https://r-forge.r-project.org/projects/rgdal/</a>.
+</div>
+<div class="csl-entry">
+Bivand, Roger, Nicholas Lewin-Koh, Edzer Pebesma, Eric Archer, Adrian Baddeley, Nick Bearman, Hans-Jörg Bibiko, et al. 2020. <em><span class="nocase">maptools: Tools for Handling Spatial Objects</span></em>. <a href="https://cran.r-project.org/web/packages/maptools/index.html">https://cran.r-project.org/web/packages/maptools/index.html</a>.
+</div>
+<div class="csl-entry">
+Brenning, Alexander, Donovan Bangs, Marc Becker, Patrick Schratz, and Fabian Polakowski. 2018. <em><span class="nocase">RSAGA: SAGA Geoprocessing and Terrain Analysis</span></em>. <a href="https://cran.r-project.org/web/packages/RSAGA/index.html">https://cran.r-project.org/web/packages/RSAGA/index.html</a>.
+</div>
+<div class="csl-entry">
+Brenning, Alexander, Fabian Polakowski, Marc Becker, and Jannes Muenchow. 2018. <em><span class="nocase">RPyGeo: ArcGIS Geoprocessing via Python</span></em>. <a href="https://cran.r-project.org/web/packages/RPyGeo/">https://cran.r-project.org/web/packages/RPyGeo/</a>.
+</div>
+<div class="csl-entry">
+Burrough, Peter A., and Rachael McDonnell. 1998. <em><span class="nocase">Principles of Geographical Information Systems</span></em>. Oxford: Oxford University Press.
+</div>
+<div class="csl-entry">
+Câmara, G., and J. S. Medeiros. 1998. <span>“<span class="nocase">Princ<span class="nocase">í</span>pios b<span class="nocase">á</span>sicos em geoprocessamento</span>.”</span> In <em>Sistema de Informa<span>ç</span><span>õ</span>es Geogr<span>á</span>ficas</em>, edited by E. E Assad, E. D.; Sano, 2nd ed., 3–11. Bras<span>í</span>lia: Embrapa.
+</div>
+<div class="csl-entry">
+Carvalho Alves, Marcelo de, and Luciana Sanches. 2022. <em>Surveying with Geomatics and r</em>. CRC Press.
+</div>
+<div class="csl-entry">
+Chamberlain, Scott, Hao Zhu, Najko Jahn, Carl Boettiger, and Karthik Ram. 2022. <em>Rcrossref: Client for Various CrossRef ’APIs’</em>. <a href="https://docs.ropensci.org/rcrossref/">https://docs.ropensci.org/rcrossref/</a>.
+</div>
+<div class="csl-entry">
+Cheng, Joe, Bhaskar Karambelkar, Yihui Xie, Hadley Wickham, Kenton Russell, Kent Johnson, Barret Schloerke, et al. 2021. <em><span class="nocase">leaflet: Create Interactive Web Maps with the JavaScript ’Leaflet’ Library</span></em>. <a href="https://cran.r-project.org/web/packages/leaflet/index.html">https://cran.r-project.org/web/packages/leaflet/index.html</a>.
+</div>
+<div class="csl-entry">
+Decorps, Jean Pierre. 2021. <em><span class="nocase">GADMTools: Easy Use of ’GADM’ Maps</span></em>. <a href="https://cran.r-project.org/web/packages/GADMTools">https://cran.r-project.org/web/packages/GADMTools</a>.
+</div>
+<div class="csl-entry">
+Gorelick, Noel, Matt Hancher, Mike Dixon, Simon Ilyushchenko, David Thau, and Rebecca Moore. 2017. <span>“<span class="nocase">Google Earth Engine: Planetary-scale geospatial analysis for everyone</span>.”</span> <em>Remote Sensing of Environment</em> 202 (December): 18–27. <a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>.
+</div>
+<div class="csl-entry">
+Goslee, Sarah C. 2011. <span>“<span class="nocase">Analyzing remote sensing data in R: the landsat package</span>.”</span> <em>Journal of Statistical Software</em> 43 (4): 1–25.
+</div>
+<div class="csl-entry">
+Graves, Spencer, Sundar Dorai-Raj, and Romain Francois. 2020. <em><span class="nocase">sos: Search Contributed R Packages, Sort by Package</span></em>. <a href="https://cran.r-project.org/web/packages/sos/">https://cran.r-project.org/web/packages/sos/</a>.
+</div>
+<div class="csl-entry">
+Hijmans, Robert J., Jacob van Etten, Michael Sumner, Joe Cheng, Dan Baston, Andrew Bevan, Roger Bivand, et al. 2020. <em><span class="nocase">raster: Geographic Data Analysis and Modeling</span></em>. <a href="https://rspatial.org/raster">https://rspatial.org/raster</a>.
+</div>
+<div class="csl-entry">
+Jensen, John R., and Ryan R. Jensen. 2012. <em><span>Introductory Geographic Information Systems</span></em>. 1st ed. Prentice Hall.
+</div>
+<div class="csl-entry">
+Kwok, R. 2018. <span>“<span class="nocase">Ecology’s remote sensing revolution</span>.”</span> <em>Nature</em>, 556.
+</div>
+<div class="csl-entry">
+Lamigueiro, O. P., and R. Hijmans. 2020. <em><span class="nocase">rasterVis: Visualization Methods for Raster Data</span></em>. <a href="https://cran.r-project.org/web/packages/rasterVis/">https://cran.r-project.org/web/packages/rasterVis/</a>.
+</div>
+<div class="csl-entry">
+Lamigueiro, Oscar Perpinan. 2018. <em><span class="nocase">Displaying Time Series, Spatial, and Space-Time Data with R</span></em>. 2nd ed. New York: Chapman; Hall/CRC. <a href="https://doi.org/10.1201/9781315108872">https://doi.org/10.1201/9781315108872</a>.
+</div>
+<div class="csl-entry">
+Lo, Chor Pang, and Albert K. W. Yeung. 2007. <em><span class="nocase">Concepts and Techniques of Geographic Information Systems</span></em>. 2nd ed. Upper Saddle River, NJ: Pearson Prentice Hall.
+</div>
+<div class="csl-entry">
+Longley, Paul A., Michael F. Goodchild, David J. Maguire, and David W. Rhind. 2001. <em><span class="nocase">Geographic Information Systems and Science</span></em>. Chichester: John Wiley &amp; Sons, Inc.
+</div>
+<div class="csl-entry">
+Lovelace, Robin, Jakub Nowosad, and Jannes Muenchow. 2019. <em><span class="nocase">Geocomputation with R</span></em>. 1st ed. Boca Raton: CRC Press.
+</div>
+<div class="csl-entry">
+McCormac, Jack C, Wayne A Sarasua, and William J Davis. 2012. <em>Surveying</em>. John Wiley &amp; Sons.
+</div>
+<div class="csl-entry">
+Mondello, C., G. Hepner, and R. M. Medina. 2008. <span>“<span>ASPRS 10 Year Remote Sensing Industry Forecast: Phase V</span>.”</span> <em>Photogrammetric Engineering &amp; Remote Sensing</em> 74 (11): 1297–1305.
+</div>
+<div class="csl-entry">
+Openshaw, Stan, and R. J. Abrahart. 2001. <em><span>GeoComputation</span></em>. 1st ed. London: Taylor &amp; Francis.
+</div>
+<div class="csl-entry">
+Pebesma, Edzer, and Roger S Bivand. 2005. <span>“<span class="nocase">S classes and methods for spatial data: the sp package</span>.”</span> <em>R News</em> 5 (2): 9–13.
+</div>
+<div class="csl-entry">
+Pebesma, Edzer, Roger Bivand, Etienne Racine, Michael Sumner, Ian Cook, Tim Keitt, Robin Lovelac, et al. 2021. <em><span class="nocase">sf: Simple Features for R</span></em>. <a href="https://cran.r-project.org/web/packages/sf/index.html">https://cran.r-project.org/web/packages/sf/index.html</a>.
+</div>
+<div class="csl-entry">
+Pebesma, Edzer, Roger Bivand, Barry Rowlingson, Virgilio Gomez-Rubio, Robert Hijmans, Michael Sumner, Don MacQueen, et al. 2021. <em><span class="nocase">sp: Classes and Methods for Spatial Data</span></em>. <a href="https://cran.r-project.org/web/packages/sp/index.html">https://cran.r-project.org/web/packages/sp/index.html</a>.
+</div>
+<div class="csl-entry">
+Pebesma, Edzer, Daniel Nüst, and Roger Bivand. 2012. <span>“<span class="nocase">The R software environment in reproducible geoscientific research</span>.”</span> <em>Eos, Transactions American Geophysical Union</em> 93 (16): 163–63. <a href="https://doi.org/10.1029/2012EO160003">https://doi.org/10.1029/2012EO160003</a>.
+</div>
+<div class="csl-entry">
+R Core Team. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div class="csl-entry">
+Rogers, E. M. 1995. <em><span class="nocase">Diffusion of Innovations</span></em>. 4th ed. Free Press.
+</div>
+<div class="csl-entry">
+Siqueira, Renato Prado. 2017. <em><span class="nocase">brazilmaps: Brazilian Maps from Different Geographic Levels</span></em>. <a href="https://rdrr.io/cran/brazilmaps/man/get_brmap.html">https://rdrr.io/cran/brazilmaps/man/get_brmap.html</a>.
+</div>
+<div class="csl-entry">
+Tennekes, Martijn. 2018. <span>“<span class="nocase">tmap : Thematic Maps in R</span>.”</span> <em>Journal of Statistical Software</em> 84 (6). <a href="https://doi.org/10.18637/jss.v084.i06">https://doi.org/10.18637/jss.v084.i06</a>.
+</div>
+<div class="csl-entry">
+Tennekes, Martijn, Jakub Nowosad, Joel Gombin, Sebastian Jeworutzki, Kent Russell, Richard Zijdeman, John Clouse, Robin Lovelace, and Jannes Muenchow. 2020. <em><span class="nocase">tmap: Thematic Maps</span></em>. <a href="https://cran.r-project.org/web/packages/tmap/%0Aindex.html">https://cran.r-project.org/web/packages/tmap/%0Aindex.html</a>.
+</div>
+<div class="csl-entry">
+Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, Dewey Dunnington, and RStudio. 2020. <em><span class="nocase">ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</span></em>. <a href="https://cran.r-project.org/web/packages/ggplot2/index.html">https://cran.r-project.org/web/packages/ggplot2/index.html</a>.
+</div>
+<div class="csl-entry">
+Wickham, Hadley, Romain François, Lionel Henry, Kirill Müller, and RStudio. 2021. <em><span class="nocase">dplyr: A Grammar of Data Manipulation</span></em>. <a href="https://cran.r-project.org/web/packages/dplyr/index.html">https://cran.r-project.org/web/packages/dplyr/index.html</a>.
+</div>
+<div class="csl-entry">
+Wickham, Hadley, Jim Hester, Winston Chang, and RStudio. 2021. <em><span class="nocase">devtools: Tools to Make Developing R Packages Easier</span></em>. <a href="https://cran.r-project.org/web/packages/devtools/index.html">https://cran.r-project.org/web/packages/devtools/index.html</a>.
+</div>
+<div class="csl-entry">
+Wickham, Hadley, Jim Hester, Romain Francois, RStudio, Jukka Jylänki, and Mikkel Jørgensen. 2021. <em><span class="nocase">readr: Read Rectangular Text Data</span></em>.
+</div>
+<div class="csl-entry">
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+</div>
+<div class="csl-entry">
+———. 2018. <span>“Knitr: A Comprehensive Tool for Reproducible Research in r.”</span> In <em>Implementing Reproducible Research</em>, 3–31. Chapman; Hall/CRC.
+</div>
+<div class="csl-entry">
+———. 2023. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/99-references.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

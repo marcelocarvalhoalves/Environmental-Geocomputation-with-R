@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Introduction to Environmental Geocomputation with R | Environmental Geocomputation with R (Classroom summary)</title>
+  <meta name="description" content="Environmental Geocomputation with R: Textbook and Lab Manual (Short version for the classroom)" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Introduction to Environmental Geocomputation with R | Environmental Geocomputation with R (Classroom summary)" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Environmental Geocomputation with R: Textbook and Lab Manual (Short version for the classroom)" />
+  <meta name="github-repo" content="true" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Introduction to Environmental Geocomputation with R | Environmental Geocomputation with R (Classroom summary)" />
+  
+  <meta name="twitter:description" content="Environmental Geocomputation with R: Textbook and Lab Manual (Short version for the classroom)" />
+  
+
+<meta name="author" content="Marcelo de Carvalho Alves" />
+
+
+<meta name="date" content="2026-03-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="preface.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Environmental Geocomputation with R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Environmental Geocomputation with R</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://www.routledge.com/Environmental-Geocomputation-with-R-Textbook-and-Lab-Manual/deCarvalhoAlves/p/book/9781041208228" target="blank">Published by CRC Press</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Environmental Geocomputation with R (Classroom summary)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction to Environmental Geocomputation with R<a href="intro.html#intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Introduction<a href="intro.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The deterioration of renewable resources has affected environmental sustainability, and that population growth, pollution, and climate variation over specific periods of time have determined the collapse of civilizations without sufficient technology to reverse the natural impacts on the progress of these populations <span class="citation">(<a href="#ref-Burrough1998principles">Burrough and McDonnell 1998</a>; <a href="#ref-Alves2020humanprogress">Alves et al. 2020</a>)</span>.</p>
+<p>Almost everything that happens happens somewhere, so geographic location is an important attribute of activities, policies, strategies, and planning. Geographic information systems are a class of information systems for mapping and managing the location and occurrence of events, activities, and other events where the location aspect has been used in problem solving, called in this case geographic problems, as in the following situations <span class="citation">(<a href="#ref-Burrough1998principles">Burrough and McDonnell 1998</a>; <a href="#ref-Longley2001geographicinformation">Longley et al. 2001</a>)</span>:</p>
+<ul>
+<li>Agricultural and environmental management;</li>
+<li>Urban planning;</li>
+<li>Health management;</li>
+<li>Delivery companies;</li>
+<li>Navigation, definition of transportation routes and trips;</li>
+<li>Geodemographic consultation;</li>
+<li>Tourism;</li>
+<li>Military organizations and border defense;</li>
+<li>Archaeology;</li>
+<li>Epidemiology;</li>
+<li>Marketing;</li>
+<li>Registration and evaluation of urban and rural properties;</li>
+<li>Social studies;</li>
+<li>Environment.</li>
+</ul>
+<div id="geographic-information-systems" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Geographic information systems<a href="intro.html#geographic-information-systems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The term GIS refers to systems in which geographic data have been processed <span class="citation">(<a href="#ref-Camara1998principles">Câmara and Medeiros 1998</a>)</span> and geoprocessing is the technology involved in the process of obtaining results and products using GIS. GIS has been defined as a powerful set of tools to obtain, store, retrieve, transform and display spatial data of a given region for a given purpose <span class="citation">(<a href="#ref-Burrough1998principles">Burrough and McDonnell 1998</a>)</span>, however, other definitions have also been made under different contexts of use (Table <a href="intro.html#tab:tab1a">1.1</a>) <span class="citation">(<a href="#ref-Burrough1998principles">Burrough and McDonnell 1998</a>; <a href="#ref-Longley2001geographicinformation">Longley et al. 2001</a>)</span>:</p>
+<table>
+<caption> <span id="tab:tab1a">TABLE 1.1: </span> Definitions of geographic information systems and use by different social groups.</caption>
+<colgroup>
+<col width="59%" />
+<col width="40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Definition</th>
+<th align="center">Context of Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">A container of maps in digital form</td>
+<td align="center">General Public</td>
+</tr>
+<tr class="even">
+<td align="center">A computational tool for solving geographic problems</td>
+<td align="center">Designers and decision makers</td>
+</tr>
+<tr class="odd">
+<td align="center">A spatial decision support system</td>
+<td align="center">Management scientists, operations researchers</td>
+</tr>
+<tr class="even">
+<td align="center">Mechanized Inventory of Geographical Features</td>
+<td align="center">Utility Managers, Transportation Officials, Resource Managers</td>
+</tr>
+<tr class="odd">
+<td align="center">Tool to reveal invisible issues in geographic information</td>
+<td align="center">Researchers and Scientists</td>
+</tr>
+<tr class="even">
+<td align="center">More accurate and cheaper tool to perform geographic operations on data than manually</td>
+<td align="center">Resource and planning managers</td>
+</tr>
+</tbody>
+</table>
+<p>In this context the main characteristics of a GIS are identified <span class="citation">(<a href="#ref-Camara1998principles">Câmara and Medeiros 1998</a>)</span>:</p>
+<ul>
+<li>Integrate geographic information from cartographic data, census, urban and rural registration, satellite images, networks and digital terrain models in a single database;</li>
+<li>Combine information through algorithms for manipulation and analysis, consultation, retrieval, visualization of tables, graphs and maps from operational mechanisms on the geographic database;</li>
+<li>Analyze spatial relationships between geographic objects;</li>
+<li>Establish topology and structure of spatial relationships of neighborhood, proximity and relevance established between geographic objects;</li>
+<li>Store the topology of a map.</li>
+</ul>
+<p>Therefore, GIS technology was considered different from computer-aided design (CAD) technology, i.e., in most CAD models, drawings do not have descriptive attributes, but only graphical properties such as color and thickness, without storing the topology of an object on a map <span class="citation">(<a href="#ref-Camara1998principles">Câmara and Medeiros 1998</a>)</span>.</p>
+</div>
+<div id="geocomputation" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Geocomputation<a href="intro.html#geocomputation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Geocomputation refers to the science of geography in a computationally sophisticated environment. In essence, geocomputation derives from the field of artificial intelligence related to the application of a computer science paradigm to study all types of geographic phenomena, including physical and human systems, using relatively massive computing power to tackle major challenges of immense complexity. Therefore, geocomputation can be defined as the science, art and technology of solving complex spatial problems with computers <span class="citation">(<a href="#ref-openshaw2001geocomputation">Openshaw and Abrahart 2001</a>)</span>.</p>
+<p>The objectives of geocomputation can be described as <span class="citation">(<a href="#ref-openshaw2001geocomputation">Openshaw and Abrahart 2001</a>)</span>:</p>
+<ul>
+<li>Accelerate existing computer-related activities so that more comprehensive experiments can be performed;</li>
+<li>Improve the quality of results by using computationally intensive methods to reduce the number of assumptions and eliminate shortcuts and simplifications imposed by irrelevant computational constraints;</li>
+<li>Enable the analysis of larger databases and obtain better results considering the ability to process data with higher resolution;</li>
+<li>Develop new approaches and methods based on computational technologies from disciplines such as artificial intelligence and computer vision, new ways of solving optimization problems, being opportunistic and entrepreneurial, in order to solve old problems using new technologies and innovations relevant to geographic issues, but which are currently limited by processor speed and memory size.</li>
+</ul>
+</div>
+<div id="spatial-and-geospatial-context" class="section level3 hasAnchor" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Spatial and geospatial context<a href="intro.html#spatial-and-geospatial-context" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When the geographic adjective used is the term spatial, the object or process occurred on surfaces of other planets, in the space of the cosmos, or in the space of the human body captured by medical images. With respect to the term geospatial, this denomination occurred to specify objects and processes that occurred near the Earth’s surface or that were relative to planet Earth <span class="citation">(<a href="#ref-Longley2001geographicinformation">Longley et al. 2001</a>)</span>.</p>
+<p>Geospatial geographic information and analysis is commonly used by society not only to determine the fastest route to a location through mapping websites, but also, for example, to assess environmental impact in natural areas and perform zoning in regions to assess the spatial distribution of existing wetlands, land use and cover, slope, terrain elevation, hydrological and transportation network (Figure <a href="intro.html#fig:fig1a">1.1</a>) <span class="citation">(<a href="#ref-Jensen2012introductorygeographic">Jensen and Jensen 2012</a>)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig1a"></span>
+<embed src="assets/img1/Fig5.pdf" title="Cell phone with GPS technology and mapping capabilities to search geospatial databases through traditional cartography or satellite imagery." width="100%" height="500px" type="application/pdf" />
+<p class="caption">
+FIGURE 1.1: Cell phone with GPS technology and mapping capabilities to search geospatial databases through traditional cartography or satellite imagery.
+</p>
+</div>
+</div>
+</div>
+<div id="decision-levels-in-geocomputation" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Decision levels in geocomputation<a href="intro.html#decision-levels-in-geocomputation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Geographic problems are classified according to the decision context in <span class="citation">(<a href="#ref-Camara1998principles">Câmara and Medeiros 1998</a>; <a href="#ref-Longley2001geographicinformation">Longley et al. 2001</a>)</span>:</p>
+<ul>
+<li>Scale or level of detail required that determines spatial correlation between geographic phenomena;</li>
+<li>Type of demand or purpose that determines thematic correlation between geographic phenomena;</li>
+<li>Occurrence over time that determines temporal correlation among geographic phenomena;</li>
+<li>Topological correlation such as adjacency, pertinence, intersection between geographic phenomena.</li>
+</ul>
+<p>In spatially distributed data, geographic coordinates and data attributes can be used to identify and locate attributes in geographic space. Geoinformation is disseminated in the form of maps, aerial photographs, satellite images on Internet mapping services such as <span class="citation">(<a href="#ref-Jensen2012introductorygeographic">Jensen and Jensen 2012</a>)</span>:</p>
+<ul>
+<li><a href="www.earth.google.com">Google Earth</a>;</li>
+<li><a href="www.maps.google.com">Google Maps</a>;</li>
+<li><a href="www.mapquest.com">MapQuest</a>;</li>
+<li><a href="www.maps.yahoo.com">Yahoo! Maps</a>;</li>
+<li><a href="www.microsoft.com/maps/default.aspx">Bing Maps</a>.</li>
+</ul>
+<div id="decision-making-process-in-geocomputation" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Decision-making process in geocomputation<a href="intro.html#decision-making-process-in-geocomputation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using information systems it is possible to manage, organize, store, access, retrieve, manipulate, synthesize and apply knowledge to solve problems. Knowledge about the meaning of the terms data, information, evidence, knowledge, and wisdom is useful to understand about the infrastructure of the decision-making process, the ease of sharing, and examples in geocomputation. Data is described by numbers, text, or symbols without context. Data can be shared as a stream of bits and with a set of data one can build a database <span class="citation">(<a href="#ref-Longley2001geographicinformation">Longley et al. 2001</a>)</span>.</p>
+<p>Some types of geographic data used in geocomputation are <span class="citation">(<a href="#ref-Burrough1998principles">Burrough and McDonnell 1998</a>)</span>:</p>
+<ul>
+<li>Maps, charts, and topographic plans;</li>
+<li>Images obtained from satellites, aircraft, and the surface;</li>
+<li>Administrative boundaries and census data;</li>
+<li>Statistical data;</li>
+<li>Marketing survey data;</li>
+<li>Data on gas, water, electricity utilities and locations;</li>
+<li>Sampling data on soil, water, atmosphere, biological activity, disasters, in different spatial and temporal resolutions.</li>
+</ul>
+<p>A database can be formed by the union of several data sets and the volume of data varies according to specific applications (Tabela <a href="intro.html#tab:tab2a">1.2</a>) <span class="citation">(<a href="#ref-Longley2001geographicinformation">Longley et al. 2001</a>)</span>.</p>
+<table>
+<caption> <span id="tab:tab2a">TABLE 1.2: </span> Estimated database storage volumes for typical geocomputation applications, where a set of 8 bits in a single unit formed a byte.</caption>
+<colgroup>
+<col width="14%" />
+<col width="22%" />
+<col width="63%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Size</th>
+<th align="center">Bytes</th>
+<th align="center">Application</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1 megabyte</td>
+<td align="center">1 000 024</td>
+<td align="center">Simple database of a small project.</td>
+</tr>
+<tr class="even">
+<td align="center">1 gigabyte</td>
+<td align="center">1 000 000 024</td>
+<td align="center">Network of roads in a small town or country.</td>
+</tr>
+<tr class="odd">
+<td align="center">1 terabyte</td>
+<td align="center">1 000 000 000 024</td>
+<td align="center">Earth’s wavelength spectral reflectance at 30m spatial resolution.</td>
+</tr>
+<tr class="even">
+<td align="center">1 petabyte</td>
+<td align="center">1 000 000 000 000 024</td>
+<td align="center">Satellite image of the entire planet Earth at 1m spatial resolution.</td>
+</tr>
+<tr class="odd">
+<td align="center">1 exabyte</td>
+<td align="center">1 000 000 000 000 000 024</td>
+<td align="center">3-D representation of the Earth at 10m spatial resolution.</td>
+</tr>
+</tbody>
+</table>
+<p>Knowledge can be synonymous with information if interpretation is added for a certain context, experience, and purpose that determines some learning. Information can exist without knowledge, but for there to be knowledge there must be a learning process. Sharing knowledge between people, or quantifying it, is more difficult than obtaining information about an object or process. Knowledge about how a certain process works can be more important than its appearance, since it can be used for process prediction or new object positions. Also, knowledge is more related to assimilation than to the storage of knowledge. Evidence is considered a middle ground between information and knowledge, i.e. a multiplicity of information from different sources, related to solve several specific problems and with validated consistency. Wisdom is used in the context of decisions made based on all available evidence and knowledge, but weighted according to an understanding of likely consequences. Wisdom is defined at the top level of the decision-making infrastructure hierarchy (Figure <a href="intro.html#fig:fig2a">1.2</a>) <span class="citation">(<a href="#ref-Longley2001geographicinformation">Longley et al. 2001</a>)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig2a"></span>
+<embed src="assets/img1/Fig1_en.pdf" title="Decision-making infrastructure classification used in geocomputation." width="100%" height="500px" type="application/pdf" />
+<p class="caption">
+FIGURE 1.2: Decision-making infrastructure classification used in geocomputation.
+</p>
+</div>
+</div>
+</div>
+<div id="history-of-geocomputation" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> History of geocomputation<a href="intro.html#history-of-geocomputation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Geocomputation is linked by name to what is broadly termed computational science. Computational science is a relative new multidisciplinary paradigm for doing science in the late 20th century. The availability of high performance computers, graphic workstations, speed networks, coupled with major advances in algorithms and softwares, has brought a revolution in the way scientific and engineering investigations are performed. Computational science involves using computers to study scientific problems and to complement the use of theory and experimentation in scientific investigation <span class="citation">(<a href="#ref-openshaw2001geocomputation">Openshaw and Abrahart 2001</a>)</span>. The major events of the last decades determined the modern history of geocomputation were divided into eras of innovation (1957-1977), commercialization (1981-1999), and exploitation (1999-present). The intensive use of geocomputation was defined from the time when there was a reduction in the price of computers below a critical threshold.</p>
+<p>According to defined innovation criteria <span class="citation">(<a href="#ref-Rogers1995diffusion">Rogers 1995</a>)</span>, geocomputation was considered at the innovation stage in the 1970s, with initial use around the 1980s and, the beginning of maturity occurred in the 1990s. Currently, geocomputation was observed to be in the maturity stage greater than climax (Figure <a href="intro.html#fig:fig7a">1.3</a>) <span class="citation">(<a href="#ref-Longley2001geographicinformation">Longley et al. 2001</a>)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig7a"></span>
+<embed src="assets/img1/Fig4_en.pdf" title="Geocomputation development according to an innovation model." width="100%" height="500px" type="application/pdf" />
+<p class="caption">
+FIGURE 1.3: Geocomputation development according to an innovation model.
+</p>
+</div>
+</div>
+<div id="components-of-geographic-information-systems" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Components of geographic information systems<a href="intro.html#components-of-geographic-information-systems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The components of a geographic information system are classified into <span class="citation">(<a href="#ref-Burrough1998principles">Burrough and McDonnell 1998</a>; <a href="#ref-Longley2001geographicinformation">Longley et al. 2001</a>; <a href="#ref-Jensen2012introductorygeographic">Jensen and Jensen 2012</a>)</span> (Figure <a href="intro.html#fig:fig3a">1.4</a>):</p>
+<ul>
+<li>Digital information sharing network;</li>
+<li>People;</li>
+<li>Data;</li>
+<li>Software;</li>
+<li>Hardware;</li>
+<li>Procedures and routines.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig3a"></span>
+<embed src="assets/img1/Fig2_en.pdf" title="Components of a geographic information system." width="100%" height="500px" type="application/pdf" />
+<p class="caption">
+FIGURE 1.4: Components of a geographic information system.
+</p>
+</div>
+<p>Data can be stored on the computer’s hard disk, on the Internet, or on other digital data storage devices. The user controls the computer and other accessory equipment with a keyboard and mouse. Software in geographic information system is classified according to functionality into <span class="citation">(<a href="#ref-Burrough1998principles">Burrough and McDonnell 1998</a>; <a href="#ref-Camara1998principles">Câmara and Medeiros 1998</a>)</span> (Figure <a href="intro.html#fig:fig4a">1.5</a>):</p>
+<ul>
+<li>Data import and verification;</li>
+<li>Database storage and management;</li>
+<li>Data export, visualization and plotting;</li>
+<li>Query, spatial analysis, image processing, data transformation;</li>
+<li>User interface.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig4a"></span>
+<embed src="assets/img1/Fig7_en.pdf" title="Components of a geographic database." width="100%" height="500px" type="application/pdf" />
+<p class="caption">
+FIGURE 1.5: Components of a geographic database.
+</p>
+</div>
+<p>The basic requirements for a geographic information system according to functionality are specified in <span class="citation">(<a href="#ref-Burrough1998principles">Burrough and McDonnell 1998</a>)</span>:</p>
+<ul>
+<li>Show the location of an <span class="math inline">\(A\)</span> object;</li>
+<li>Show the location of an <span class="math inline">\(A\)</span> object relative to <span class="math inline">\(B\)</span>;</li>
+<li>Count the number of objects of type <span class="math inline">\(A\)</span> at a distance <span class="math inline">\(D\)</span> from object <span class="math inline">\(B\)</span>;</li>
+<li>Evaluate a function <span class="math inline">\(f\)</span> at a position <span class="math inline">\(X\)</span>;</li>
+<li>Determine the area and perimeter of <span class="math inline">\(B\)</span>;</li>
+<li>Determine the result of intersection between different types of geospatial data;</li>
+<li>Determine the least cost path along a network or continuous surface;</li>
+<li>List the attributes of objects at locations <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>;</li>
+<li>Determine objects near others according to a combination of specific attributes;</li>
+<li>Reclassify objects with a particular combination of attributes;</li>
+<li>Use geostatistical methods to model the spatial dependence of an attribute Z in a neighborhood of points at locations <span class="math inline">\(X_1, X_2,..., X_n\)</span> and predict the value Z at locations <span class="math inline">\(Y_1, Y_2,..., Y_n\)</span>;</li>
+<li>Use statistical and computational intelligence methods to derive new variables from existing variables and vice versa;</li>
+<li>Use a digital model of the Earth and simulate the effect of a process <span class="math inline">\(P\)</span>, at a time <span class="math inline">\(T\)</span>, on a scenario <span class="math inline">\(C\)</span>.</li>
+</ul>
+</div>
+<div id="geocomputation-and-other-fields-of-knowledge" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Geocomputation and other fields of knowledge<a href="intro.html#geocomputation-and-other-fields-of-knowledge" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Geocomputation works in harmony with other geographic information sciences, including remote sensing, cartography, topography, geostatistics, digital image processing, statistics, computer science, artificial intelligence and computer vision, as well as other sub-disciplines such as engineering, mathematics, logic, physics, chemistry, biology, and sociology (Figure <a href="intro.html#fig:fig5a">1.6</a>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig5a"></span>
+<embed src="assets/img1/Fig8_en.pdf" title="Geocomputation and other sciences." width="100%" height="500px" type="application/pdf" />
+<p class="caption">
+FIGURE 1.6: Geocomputation and other sciences.
+</p>
+</div>
+<p>Geocomputation is concerned with computational techniques, algorithms, and paradigms that involves four leading edge technologies <span class="citation">(<a href="#ref-openshaw2001geocomputation">Openshaw and Abrahart 2001</a>)</span>:</p>
+<ul>
+<li>GIS, for data creation;</li>
+<li>Artificial intelligence and soft computing, to provide smart tools;</li>
+<li>High performance computing, to provide the power;</li>
+<li>Science, to provide the philosophy.</li>
+</ul>
+</div>
+<div id="geocomputation-societies" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Geocomputation societies<a href="intro.html#geocomputation-societies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In geoprocessing societies are promoted stimulus to development, study and research in the field of geographic information systems and related areas, to bring together people and entities with interest in geographic problems, development and applications of geocomputation and interaction with other technical-scientific societies, involved directly or indirectly with this area. Some related geoprocessing societies are:</p>
+<ul>
+<li><a href="https://www.nationalgeographic.org/about-us/">National Geographic Society</a></li>
+<li><a href="http://www.gisig.eu/">Geographical Information Systems International Group (GISIG)</a></li>
+<li><a href="https://www.gita.org/">Geospatial Information <span class="math inline">\(\&amp;\)</span> Technology Association</a></li>
+<li><a href="https://www.agi.org.uk/">The Association For Geographic Information</a></li>
+<li><a href="http://www.amergeog.org/">American Geographical Society (AGS)</a></li>
+<li><a href="http://www.cartogis.org/">Cartography and Geographic Information Society (CaGIS)</a></li>
+<li><a href="http://www.cag-acg.ca/en/index.html">Canadian Association of Geographers (CAG)</a></li>
+<li><a href="https://www.gita.org/">Geospatial Information and Technology Association (GITA)</a></li>
+<li><a href="http://www.asprs.org/">The Imaging and Geospatial Information Society</a></li>
+<li><a href="http://www.ucgis.org/">University Consortium for Geographic Information Science (UCGIS)</a></li>
+<li><a href="http://www.urisa.org/">Urban and Regional Information Systems Association (URISA)</a></li>
+</ul>
+</div>
+<div id="data-sources-in-geocomputation" class="section level2 hasAnchor" number="1.7">
+<h2><span class="header-section-number">1.7</span> Data sources in geocomputation<a href="intro.html#data-sources-in-geocomputation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Government agencies and companies perform work in the area of geocomputation, where geospatial data infrastructure can be obtained for carrying out projects and research work through images and thematic maps of the territory and products derived from basic data obtained by scientific research (Figure <a href="intro.html#fig:fig6a">1.7</a>)<span class="citation">(<a href="#ref-Jensen2012introductorygeographic">Jensen and Jensen 2012</a>)</span>. Some geocomputation data and products can be obtained on the Internet:</p>
+<ul>
+<li><a href="www.aeb.gov.br">Agência Espacial Brasileira</a></li>
+<li><a href="www.inpe.br">Instituto Nacional de Pesquisas Espaciais</a></li>
+<li><a href="www.ccrs.nrcan.gc.ca/">Canada Center Remote Sensing</a></li>
+<li><a href="www.cnes.fr/">Centre National d’Etudes Spatiales</a></li>
+<li><a href="www.csiro.au/">Scientific and Industrial Research for Australia (CSIRO)</a></li>
+<li><a href="www.esa.int/">European Space Agency</a></li>
+<li><a href="www.nasa.gov/">National Aeronautics And Space Administration</a></li>
+<li><a href="www.nrsa.gov.in/">National Remote Sensing Agency India</a></li>
+<li><a href="www.nasda.go.jp/index_e.html">National Remote Sensing Agency Japan</a></li>
+<li><a href="https://earthengine.google.com/platform/">Google Earth Engine</a></li>
+<li><a href="https://downloads.ibge.gov.br/downloads_geociencias.htm">IBGE</a></li>
+<li><a href="https://cran.r-project.org/web/packages/spData/index.html">spData</a></li>
+<li><a href="https://cran.r-project.org/web/packages/rnaturalearth/README.html">rnaturalearth</a></li>
+<li><a href="https://www.rdocumentation.org/packages/raster/versions/3.1-5/topics/getData">raster getData</a></li>
+<li><a href="http://www.inmet.gov.br/portal/index.php?r=bdmep/bdmep">BDMEP</a></li>
+<li><a href="https://www.snirh.gov.br/hidroweb/apresentacao">ANA</a></li>
+<li><a href="https://www.ncdc.noaa.gov/cdo-web/">NOAA</a></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig6a"></span>
+<embed src="assets/img1/Fig6_en.pdf" title="Geospatial data infrastructure." width="100%" height="500px" type="application/pdf" />
+<p class="caption">
+FIGURE 1.7: Geospatial data infrastructure.
+</p>
+</div>
+</div>
+<div id="geocomputation-journals" class="section level2 hasAnchor" number="1.8">
+<h2><span class="header-section-number">1.8</span> Geocomputation journals<a href="intro.html#geocomputation-journals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Journals in the area of geocomputation are related to the progress of knowledge in the area, in order to facilitate communication among professionals and to update the development of science and technology using geographic information systems. Some journals with a theoretical and practical approach to geocomputation can be accessed via the Internet, such as:</p>
+<ul>
+<li>International Journal of Geographical Information Systems;</li>
+<li>Computers and Geosciences;</li>
+<li>Computers;</li>
+<li>Computers, Environment and Urban Systems;</li>
+<li>International Journal of Applied Earth Observation and Geoinformation;</li>
+<li>GeoInformatics;</li>
+<li>Geospatial Solutions;</li>
+<li>GIScience And Remote Sensing;</li>
+<li>IEEE Transactions on Geoscience And Remote Sensing;</li>
+<li>Pattern Recognition;</li>
+<li>Theoretical and Applied Engineering;</li>
+<li>Transactions in GIS;</li>
+<li>Annals of the Association of American Geographers;</li>
+<li>Cartography and Geographic Information Science;</li>
+<li>The Cartography Journal;</li>
+<li>Geographical Analysis;</li>
+<li>GeoInformatica;</li>
+<li>Journal of Geographical Systems;</li>
+<li>Transactions in GIS;</li>
+<li>URISA Journal.</li>
+</ul>
+</div>
+<div id="geocomputation-society-and-investments" class="section level2 hasAnchor" number="1.9">
+<h2><span class="header-section-number">1.9</span> Geocomputation, society and investments<a href="intro.html#geocomputation-society-and-investments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Geographic information science is linked to the following context in society (Figure <a href="intro.html#fig:fig8a">1.8</a>) <span class="citation">(<a href="#ref-Longley2001geographicinformation">Longley et al. 2001</a>)</span>:</p>
+<ul>
+<li>The individual;</li>
+<li>The computer;</li>
+<li>Society.</li>
+</ul>
+<p>Research on the individual is related to cognitive science to understand geospatial concepts, learning and reasoning about geographic data, and computer interaction. Research on the computer is characterized by issues of representation, adaptation to new technologies, geoprocessing and visualization. Research on society is distinguished by the theoretical and practical scope for studying relevance in the social context.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig8a"></span>
+<embed src="assets/img1/Fig3_en.pdf" title="Contextual relationship of geoprocessing to society." width="100%" height="500px" type="application/pdf" />
+<p class="caption">
+FIGURE 1.8: Contextual relationship of geoprocessing to society.
+</p>
+</div>
+<p>The use of geoprocessing is organized in different economic sectors of modern society. The centrality of geospatial infrastructure is composed of sectors of <span class="citation">(<a href="#ref-Lo2007conceptsandtechniques">Lo and Yeung 2007</a>)</span>:</p>
+<ul>
+<li>Technology;</li>
+<li>Research;</li>
+<li>Services;</li>
+<li>Data;</li>
+<li>Standard Setting;</li>
+<li>Social policy.</li>
+</ul>
+<p>The geospatial information sector, around geospatial infrastructure is composed of <span class="citation">(<a href="#ref-Lo2007conceptsandtechniques">Lo and Yeung 2007</a>)</span>:</p>
+<ul>
+<li>Hardware and software vendors;</li>
+<li>Map production;</li>
+<li>Surveying;</li>
+<li>Remote sensing;</li>
+<li>Geographic information system;</li>
+<li>Satellite positioning system.</li>
+</ul>
+<p>In the sector of consumers of products, services and spatial information, around the geospatial information and infrastructure sectors there is subdivision of application sectors into industrial, business, academic and public sector. In the industrial sector applications of geocomputation are observed in <span class="citation">(<a href="#ref-Lo2007conceptsandtechniques">Lo and Yeung 2007</a>)</span>:</p>
+<ul>
+<li>Agriculture, forestry and livestock;</li>
+<li>Environment;</li>
+<li>Mining;</li>
+<li>Transportation and logistics;</li>
+<li>Construction.</li>
+</ul>
+<p>In the business sector applications of geocomputation are observed in <span class="citation">(<a href="#ref-Lo2007conceptsandtechniques">Lo and Yeung 2007</a>)</span>:</p>
+<ul>
+<li>Bank financing and insurance;</li>
+<li>Consumption of geographic information services.</li>
+</ul>
+<p>In the academic sector, geocomputation is used in <span class="citation">(<a href="#ref-Lo2007conceptsandtechniques">Lo and Yeung 2007</a>)</span>:</p>
+<ul>
+<li>Education;</li>
+<li>Research and publications;</li>
+<li>Training.</li>
+</ul>
+<p>In the public sector applications of geocomputation are observed in <span class="citation">(<a href="#ref-Lo2007conceptsandtechniques">Lo and Yeung 2007</a>)</span>:</p>
+<ul>
+<li>Defense;</li>
+<li>Public health;</li>
+<li>Emergency response;</li>
+<li>Municipal management infrastructure;</li>
+<li>Land registration and taxation;</li>
+<li>Urban planning</li>
+<li>Democratic participation of communities.</li>
+</ul>
+<p>Designing and implementing a functional geocomputation system can take more than a year, depending on the size of the organization and the amount and type of location data used <span class="citation">(<a href="#ref-Longley2001geographicinformation">Longley et al. 2001</a>; <a href="#ref-Jensen2012introductorygeographic">Jensen and Jensen 2012</a>)</span>. In the industry service, for example, geospatial data is used daily to answer geographic questions for customers, as the example of surveys with farmers to maximize crop yields with precision agriculture <span class="citation">(<a href="#ref-Jensen2012introductorygeographic">Jensen and Jensen 2012</a>)</span>.</p>
+<p>Real-time location-based services (SBL) are considered a new branch of geospatial application. In this type of service, the location of a mobile device is used to deliver services and conduct business in real time by combining geocomputation, positioning system, wireless mobile device, and internet (Figura <a href="intro.html#fig:fig9a">1.9</a>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig9a"></span>
+<embed src="assets/img1/Fig10_en.pdf" title="Technologies used in real-time location-based services with geocomputation." width="100%" height="500px" type="application/pdf" />
+<p class="caption">
+FIGURE 1.9: Technologies used in real-time location-based services with geocomputation.
+</p>
+</div>
+</div>
+<div id="geocomputation-as-profession" class="section level2 hasAnchor" number="1.10">
+<h2><span class="header-section-number">1.10</span> Geocomputation as profession<a href="intro.html#geocomputation-as-profession" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Once a geographic information system is developed, the system can be used to make geospatial decisions, perform mapping and monitoring of the environment. However, the system must be used intelligently to make good decisions <span class="citation">(<a href="#ref-Jensen2012introductorygeographic">Jensen and Jensen 2012</a>)</span>.</p>
+<p>Jobs in geocomputation may be available in public agencies (national, state and local government; Colleges and universities) and private commercial companies. The demand for geocomputation professionals increases as geospatial data and analysis are more commonplace <span class="citation">(<a href="#ref-Jensen2012introductorygeographic">Jensen and Jensen 2012</a>)</span>. With the advent of satellite positioning technologies and availability of very high spatial resolution satellite imagery of much of the Earth via the Internet (Google Earth, Google Maps, MapQuest, Bing Maps), there has been increased interest from the general public in geospatial issues. In universities and colleges, geocomputation principles are covered in disciplines such as agronomy, geography, geology, engineering, natural resource management, forestry, agriculture, marine sciences, and others. Despite this, the educational system cannot keep up with the demand for qualified professionals in geoinformation science <span class="citation">(<a href="#ref-Mondello2008ASPRS">Mondello, Hepner, and Medina 2008</a>; <a href="#ref-Jensen2012introductorygeographic">Jensen and Jensen 2012</a>)</span>.</p>
+<p>In work demands related to geoprocessing, the following positions are defined <span class="citation">(<a href="#ref-Jensen2012introductorygeographic">Jensen and Jensen 2012</a>)</span>:</p>
+<ul>
+<li>Geographic information scientists and technologists;</li>
+<li>Geographic information systems technicians;</li>
+<li>Mapping technicians;</li>
+<li>Cartographers and photogrammetry specialists;</li>
+<li>Surveyors specializing in geodesy;</li>
+<li>Remote sensing scientists and technologists;</li>
+<li>Remote Sensing Technicians</li>
+<li>Surveyors;</li>
+<li>Surveying Technicians.</li>
+</ul>
+<p>Geocomputation jobs can be searched on the Internet at sites to assess the type of skills in demand in the market, typical starting salaries, and other job opportunities <span class="citation">(<a href="#ref-Jensen2012introductorygeographic">Jensen and Jensen 2012</a>)</span>:</p>
+<ul>
+<li><a href="www.gisjobs.com">GIS Jobs</a>;</li>
+<li><a href="www.gjc.org">GIS Jobs Clearinghouse</a>;</li>
+<li><a href="www.geojobs.org">GeoJobs</a>;</li>
+<li><a href="https://www.linkedin.com/?trk=nav_logo">Linkedin</a>.</li>
+</ul>
+<p>The purpose of councils, such as those for engineering and professional registration requirements, is to protect the public from unqualified or unscrupulous individuals. One of the first regulations of this type was contained in the code of laws of Hammurabi, king of Babylon in the 18th century BC. This code of ethics became famous for its “eye for an eye, tooth for a tooth” section. In 1883, registration requirements reached the United States, requiring a license for professionals in different fields to practice their professions. In Brazil, the rules for excluding geoscience professionals from registration due to incompetence or unethical behavior are not often enforced. However, the Federal Council of Engineering, Architecture, and Agronomy adopted the current Code of Ethics for Engineers, Architects, and Agronomists (Confea) on December 24, 1966. Many say that codes of ethics do not fulfill their purpose, but insofar as they postulate a goal to be achieved, they make professionals look to a higher moral plane. In addition, the most important asset a professional has is their impeccable reputation. No amount of money, fame, or knowledge is an adequate substitute. Therefore, ethics can be defined as the obligations that a professional has toward the public and colleagues in order to help them understand what standards should be achieved and what they can expect from their colleagues. Therefore, environmental geocomputation professionals must be loyal, impartial, and faithful to their clients, employers, and the public. In addition, professionals should be interested in public progress, applying their knowledge for the benefit of humanity <span class="citation">(<a href="#ref-mccormac2012surveying">McCormac, Sarasua, and Davis 2012</a>; <a href="#ref-de2022surveying">Carvalho Alves and Sanches 2022</a>)</span>. In terms of acquired professional knowledge, an analogy can be made between professional performance and the development of a corn plant. Just as ears of corn without grain raise their heads disdainfully to the sky, so do the arrogant, while those full of knowledge (or fruit) lower them to the ground. In other words, empty ears of corn without grain symbolize arrogance and emptiness. Ears full of grain, on the other hand, bow to the ground in a gesture of humility, reflecting the wisdom and abundance that lead to modesty, the opposite of pride. Pride represents the haughtiness of an ear of corn, which, due to a lack of content (knowledge or fruit), stands up without reason, not bowing.</p>
+</div>
+<div id="the-future-of-geocomputation" class="section level2 hasAnchor" number="1.11">
+<h2><span class="header-section-number">1.11</span> The future of geocomputation<a href="intro.html#the-future-of-geocomputation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>High performance computing systems have become commonplace and cloud computing is now available as a commodity. Petabyte-scale remote sensing data is made available by Brazilian, North American and European government agencies for free. Using all the available resources requires expertise and a lot of dedication. Considering the difficulties of using information technology in relation to data acquisition and storage, data format, database management, allocation of machines, CPUs, networks, multiple geocomputation routines, virtual libraries and remote sensing data were created on the internet. Through the virtual libraries, data catalogs and information readily available via high performance parallel computing service, there is rapid access and visualization of search results in geographic database with spatial data infrastructure via interactive interface on the Internet <span class="citation">(<a href="#ref-Gorelick2017googleearthengine">Gorelick et al. 2017</a>)</span> (Figure <a href="intro.html#fig:fig10a">1.10</a>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig10a"></span>
+<embed src="assets/img1/Appeears.pdf" title="AppEEARS virtual libraries (top) and GoogleEarth Engine code (bottom) used for digital image processing and obtaining spatial data infrastructure." width="100%" height="500px" type="application/pdf" />
+<p class="caption">
+FIGURE 1.10: AppEEARS virtual libraries (top) and GoogleEarth Engine code (bottom) used for digital image processing and obtaining spatial data infrastructure.
+</p>
+</div>
+</div>
+<div id="graphical-user-interface-and-command-line-interface" class="section level2 hasAnchor" number="1.12">
+<h2><span class="header-section-number">1.12</span> Graphical user interface and command line interface<a href="intro.html#graphical-user-interface-and-command-line-interface" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The development of geocomputation is closely associated with advances in computer and automatic development. The hardware used in geoprocessing has become faster, more efficient, affordable and smaller in size. There are geographic information systems with graphical mouse-click interfaces (GUI), such as QGIS and SAGA GIS software, rather than a command-line interface (CLI) typed by keyboard, as in R (Table <a href="intro.html#tab:tab5a">1.3</a>). Reproducibility is a major advantage of command line interfaces, as the same results can be generated by others via publicly accessible code, leading to profound implications for teaching and science <span class="citation">(<a href="#ref-Lovelace2019geocomputation">Lovelace, Nowosad, and Muenchow 2019</a>; <a href="#ref-Pebesma2012theRsoftware">Pebesma, Nüst, and Bivand 2012</a>)</span>.</p>
+<table>
+<caption> <span id="tab:tab5a">TABLE 1.3: </span> Differences in characteristics between a geographic information system with a graphical user interface (GUI) and a command line interface (CLI).</caption>
+<colgroup>
+<col width="31%" />
+<col width="33%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Feature</th>
+<th align="center">GUI Interface</th>
+<th align="center">Command Line Interface</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Basic subjects</td>
+<td align="center">Geography</td>
+<td align="center">Computer science, Statistics</td>
+</tr>
+<tr class="even">
+<td align="center">Software engine</td>
+<td align="center">Graphical User Interface</td>
+<td align="center">Command Line</td>
+</tr>
+<tr class="odd">
+<td align="center">Reproducibility</td>
+<td align="center">Minimum</td>
+<td align="center">Maximum</td>
+</tr>
+</tbody>
+</table>
+<p>With the sharing of different geographic information systems, geospatial analysis is broadened in terms of analysis possibilities. The Open Geospatial Consortium (OGC) started in 1994 with a group of more than 100 universities, corporations and government agencies with the goal of making geocomputation interoperable and popular. Various analysis and geocomputation data packages can be obtained on the Internet [<span class="citation">Jensen and Jensen (<a href="#ref-Jensen2012introductorygeographic">2012</a>)</span>).</p>
+<p>With the use of geocomputation software the gap between research, science and the technology is bridged in order to obtain algorithms and processing routines in different software with applications for spatial analysis of environmental variables <span class="citation">(<a href="#ref-Goslee2011analyzingremotesensing">Goslee 2011</a>; <a href="#ref-Kwok2018ecology">Kwok 2018</a>)</span>. R consists of an object-oriented functional programming language and open source cross-platform environment for statistical computing and graphics, advanced geospatial analysis, modeling, and geovisualization, with a wide variety of packages. R is ideal for quickly creating geo-tools without the need to master lower-level languages such as C, FORTRAN, or Java. With the use of R there is easy access to other languages, such as access to C++ and Python code through the Rcpp and reticulate packages, respectively. C++ and Python are used as the basis for the QGIS, GRASS and SAGA GIS <span class="citation">(<a href="#ref-Lovelace2019geocomputation">Lovelace, Nowosad, and Muenchow 2019</a>)</span> software (Figure <a href="intro.html#fig:fig11a">1.11</a>).</p>
+<p>Some free softwares used in geocomputation are:</p>
+<ul>
+<li><a href="https://www.r-project.org/">R and R packages</a>;</li>
+<li><a href="https://qgis.org/pt_BR/site/">Quantum Gis (QGIS)</a>;</li>
+<li><a href="http://www.dpi.inpe.br/spring/">SPRING/INPE</a>;</li>
+<li><a href="https://grass.osgeo.org/">GRASS</a>;</li>
+<li><a href="http://www.saga-gis.org/">SAGA GIS</a>;</li>
+<li><a href="https://www.python.org/">Python</a></li>
+</ul>
+<p>Some commercial softwares used in geocomputation are:</p>
+<ul>
+<li><a href="https://www.mathworks.com/products/matlab.html">MatLab</a>;</li>
+<li><a href="https://www.esri.com/en-us/arcgis/products/index">ArcGIS</a>;</li>
+<li><a href="https://www.pcigeomatics.com/">PCIgeomatics</a>.</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig11a"></span>
+<embed src="assets/img1/Fig9.pdf" title="R (Superior) and RStudio (Inferior) softwares used in geocomputation." width="100%" height="500px" type="application/pdf" />
+<p class="caption">
+FIGURE 1.11: R (Superior) and RStudio (Inferior) softwares used in geocomputation.
+</p>
+</div>
+<p>Regarding commercial software, because of the dynamics of the software business, many programs can change names according to the marketing involved in joining companies and modifications that can occur with time, interest, and market trends.</p>
+<p>According to <span class="citation">Lovelace, Nowosad, and Muenchow (<a href="#ref-Lovelace2019geocomputation">2019</a>)</span>, with the open source of R there has been an evolution in package developments in the geospatial area. The package <code>sf</code> <span class="citation">(<a href="#ref-R-Pebesma2021sf">Pebesma, Bivand, Racine, et al. 2021</a>)</span>, for example, is based on its predecessor <code>sp</code> <span class="citation">(<a href="#ref-Pebesma2005Sclasses">Pebesma and Bivand 2005</a>; <a href="#ref-Bivand2013appliedspatial">R. S. Bivand, Pebesma, and Gómez-Rubio 2013</a>)</span>. With <code>sf</code> we can define simple open source feature pattern and model to store and access vector geometries <span class="citation">(<a href="#ref-Lovelace2019geocomputation">Lovelace, Nowosad, and Muenchow 2019</a>)</span>.</p>
+<p><code>Maptools</code> <span class="citation">(<a href="#ref-R-Bivand2020amaptools">R. Bivand et al. 2020</a>)</span> is used to import ESRI Shapefiles files into nested lists of geometry. <code>rgdal</code> <span class="citation">(<a href="#ref-R-Bivand2021rgdal">R. Bivand et al. 2021</a>)</span>, released in 2003, provides <code>GDAL</code> bindings for R and there was support for coordinate reference systems via the <code>PROJ</code> library, reprojections, and importing vector file formats. Many of these additional features were developed by Barry Rowlingson and released in the <code>rgdal</code> codebase in 2006 <span class="citation">(<a href="#ref-Lovelace2019geocomputation">Lovelace, Nowosad, and Muenchow 2019</a>)</span>. With the <code>sp</code> package <span class="citation">(<a href="#ref-Bivand2013appliedspatial">R. S. Bivand, Pebesma, and Gómez-Rubio 2013</a>)</span>, released in 2005, it is possible to distinguish spatial and non-spatial objects <span class="citation">(<a href="#ref-Pebesma2005Sclasses">Pebesma and Bivand 2005</a>)</span>. Before 2005, geographic coordinates were treated as an arbitrary number and with <code>sp</code>, there was the creation of generic classes and methods to analyze points, lines, polygons and meshes and attribute data <span class="citation">(<a href="#ref-Lovelace2019geocomputation">Lovelace, Nowosad, and Muenchow 2019</a>)</span>. In <code>sp</code>, information is stored with coordinate reference system and attributes in geoobject slots with <code>S4</code> class system and geographic data operations. In <code>sp</code> generic summary methods are also available in the <code>summary()</code> and <code>plot()</code> functions for geographic data. In 2013 and 2018, <code>sp</code> was used in over 100 and 500 packages, respectively <span class="citation">(<a href="#ref-Bivand2013appliedspatial">R. S. Bivand, Pebesma, and Gómez-Rubio 2013</a>; <a href="#ref-Lovelace2019geocomputation">Lovelace, Nowosad, and Muenchow 2019</a>)</span>.</p>
+<p>In the <code>raster</code> package <span class="citation">(<a href="#ref-R-Hijmans2020raster">Hijmans et al. 2020</a>)</span> a system of classes and functions is used for operations with raster type data. A key feature of raster is the ability to work with very large data sets. In <code>raster</code> there is also the development of functions for map algebra. Parallel to these developments of systems and class methods, functions for interfaces of R with other geographic information systems were developed, as in the case of links between R and SAGA GIS by the <code>RSAGA</code> package <span class="citation">(<a href="#ref-R-Brenning2018RSAGA">Brenning, Bangs, et al. 2018</a>)</span>, links of R with Python ArcPy functions via the reticulate package to access ArcGIS geoprocessing functions via the <code>RPyGeo</code> package <span class="citation">(<a href="#ref-R-Brenning2018RPyGeo">Brenning, Polakowski, et al. 2018</a>)</span> and links of R with QGIS, via the <code>RQGIS</code> package <span class="citation">(<a href="#ref-Lovelace2019geocomputation">Lovelace, Nowosad, and Muenchow 2019</a>)</span>.</p>
+<p>Despite methods for making maps using the base plotting and network system of the <code>sp</code>package <span class="citation">(<a href="#ref-R-Pebesma2021sp">Pebesma, Bivand, Rowlingson, et al. 2021</a>)</span>, the demand for advanced mapping capabilities increased after the release of <code>ggplot2</code> <span class="citation">(<a href="#ref-R-Wickham2020ggplot2">Wickham et al. 2020</a>)</span> in 2007, with access to base map blocks from online services such as Google Maps. Raster visualization received a boost with the release of the <code>rasterVis</code> package <span class="citation">(<a href="#ref-R-Lamigueiro2020rasterVis">O. P. Lamigueiro and Hijmans 2020</a>)</span> to visualize geospatial and temporal data <span class="citation">(<a href="#ref-Lamigueiro2018displayingtimeseries">Oscar Perpinan Lamigueiro 2018</a>)</span>. Starting in 2018, new packages for map production in R emerged, via <code>tmap</code> <span class="citation">(<a href="#ref-Tennekes2018tmappaper">Tennekes 2018</a>; <a href="#ref-R-Tennekes2020tmap">Tennekes et al. 2020</a>)</span>, <code>leaflet</code> <span class="citation">(<a href="#ref-R-Cheng2021leaflet">Cheng et al. 2021</a>)</span> and <code>mapview</code> <span class="citation">(<a href="#ref-R-Appelhans2020mapview">Appelhans et al. 2020</a>)</span> that used the <code>sf</code> class system <span class="citation">(<a href="#ref-Lovelace2019geocomputation">Lovelace, Nowosad, and Muenchow 2019</a>)</span>.</p>
+<div id="computational-practice" class="section level3 hasAnchor" number="1.12.1">
+<h3><span class="header-section-number">1.12.1</span> Computational practice<a href="intro.html#computational-practice" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="installing-r" class="section level3 hasAnchor" number="1.12.2">
+<h3><span class="header-section-number">1.12.2</span> Installing R<a href="intro.html#installing-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>R is an open source programming, visualization and data analysis environment originating from the S <span class="citation">(<a href="#ref-Lovelace2019geocomputation">Lovelace, Nowosad, and Muenchow 2019</a>)</span> programming language. The latest version of R for Windows can be obtained for <a href="https://cran.r-project.org/bin/windows/base/"><strong>download</strong></a>. Older versions may be more useful if a package used in the data analysis has not yet been updated to the latest version of R. Older versions can be obtained for <a href="https://cran.r-project.org/bin/windows/base/old/"><strong>download</strong></a>.</p>
+<p>R can also be accessed through RStudio, an integrated development environment (IDE) for R. In RStudio there is a user-friendly interface to R with features for editing source code with colored syntax, data table viewer, git and github integration, markdown and bookdown output. In RStudio there is free software version and also private version, for companies or individuals who need customer support. The latest version of RStudio for Windows can be obtained for <a href="https://rstudio.com/products/rstudio/download/"><strong>download</strong></a>. Older versions of RStudio can be obtained for <a href="https://www.rstudio.com/products/rstudio/older-versions/"><strong>download</strong></a>.</p>
+</div>
+<div id="using-r-with-command-line" class="section level3 hasAnchor" number="1.12.3">
+<h3><span class="header-section-number">1.12.3</span> Using R with command line<a href="intro.html#using-r-with-command-line" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>R can be run from an R console or from an RStudio command line environment. We can assign values to objects, such as five numbers to objects <span class="math inline">\(x,y\)</span> with an arrow (&lt;-) or the equal symbol (=) and then perform the sum of the objects at <span class="math inline">\(z\)</span>, with the following code in R:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="intro.html#cb1-1" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>) <span class="co"># Create y database</span></span>
+<span id="cb1-2"><a href="intro.html#cb1-2" tabindex="-1"></a>y <span class="co"># Evaluate y results</span></span>
+<span id="cb1-3"><a href="intro.html#cb1-3" tabindex="-1"></a><span class="co"># [1] 5 4 3 2 1</span></span>
+<span id="cb1-4"><a href="intro.html#cb1-4" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>) <span class="co"># Create x database </span></span>
+<span id="cb1-5"><a href="intro.html#cb1-5" tabindex="-1"></a>x <span class="co"># Evaluate x results</span></span>
+<span id="cb1-6"><a href="intro.html#cb1-6" tabindex="-1"></a><span class="co"># [1] 1 2 3 4 5</span></span>
+<span id="cb1-7"><a href="intro.html#cb1-7" tabindex="-1"></a>z <span class="ot">&lt;-</span> x<span class="sc">+</span>y <span class="co"># Create z database with x,y sum</span></span>
+<span id="cb1-8"><a href="intro.html#cb1-8" tabindex="-1"></a>z <span class="co"># Evaluate z results </span></span>
+<span id="cb1-9"><a href="intro.html#cb1-9" tabindex="-1"></a><span class="co"># [1] 6 6 6 6 6</span></span></code></pre></div>
+<p>In the case of typing more than a few lines of code in a command prompt environment or when one wants to save a series of commands as part of the analysis of a project one should create an R script file and save it with an R extension to make it easier to retrieve the codes to continue the project at another time.</p>
+<p>Several packages for geospatial measurement, mapping and analysis are available in R. The packages are used in solving geographic problems in geocomputation. Searching for information about an R package can be performed based on keywords about the subject of interest by means of the package <code>sos</code> <span class="citation">(<a href="#ref-R-Graves2020sos">Graves, Dorai-Raj, and Francois 2020</a>)</span>.</p>
+<p>The search for relevant scientific publications can be performed automatically using the R software, using the public API of the Crossref database. To achieve this, the <code>cr_works()</code> function from the <code>rcrossref</code> <span class="citation">(<a href="#ref-R-rcrossref">Chamberlain et al. 2022</a>)</span> package can be used. You can also use this package with the <code>dplyr</code> <span class="citation">(<a href="#ref-R-Wickham2021dply">Wickham, François, et al. 2021</a>)</span> and <code>readr</code> <span class="citation">(<a href="#ref-R-Wickham2021readr">Wickham, Hester, Francois, et al. 2021</a>)</span> packages for data processing and export.</p>
+<p>Next, as an example, it is shown how to set up directory, install and enable packages, evaluate the version of the operating system and R on the operating system, as well as a keyword-based package search method for application in different subject areas. Finally, the <code>tmap</code> <span class="citation">(<a href="#ref-Tennekes2018tmappaper">Tennekes 2018</a>)</span> package is used to map regions of the globe.</p>
+</div>
+<div id="set-up-directory-in-r" class="section level3 hasAnchor" number="1.12.4">
+<h3><span class="header-section-number">1.12.4</span> Set up directory in R<a href="intro.html#set-up-directory-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To evaluate the working directory in R, we use the <code>getwd()</code> function and to set up a directory in R, we use the <code>setwd</code> function with the address of the new working directory.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="intro.html#cb2-1" tabindex="-1"></a><span class="fu">getwd</span>()</span>
+<span id="cb2-2"><a href="intro.html#cb2-2" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/geo/c1&quot;</span>)</span></code></pre></div>
+</div>
+<div id="installing-r-packages" class="section level3 hasAnchor" number="1.12.5">
+<h3><span class="header-section-number">1.12.5</span> Installing R packages<a href="intro.html#installing-r-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>install.packages</code> function is used in the R console to install the <code>sf</code>, <code>sos</code>, <code>tmap</code>, <code>devtools</code> <span class="citation">(<a href="#ref-R-Wickham2021devtools">Wickham, Hester, Chang, et al. 2021</a>)</span>, <code>brazilmaps</code> <span class="citation">(<a href="#ref-R-Siqueira2017brazilmaps">Siqueira 2017</a>)</span>, and <code>GADMTools</code> <span class="citation">(<a href="#ref-R-Decorps2021GADMTools">Decorps 2021</a>)</span> packages. If a package is not available for installation via CRAN, it may be necessary to download the zip file of older versions of the package and its dependencies for installation.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="intro.html#cb3-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;sf&quot;</span>)</span>
+<span id="cb3-2"><a href="intro.html#cb3-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;sos&quot;</span>)</span>
+<span id="cb3-3"><a href="intro.html#cb3-3" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tmap&quot;</span>)</span>
+<span id="cb3-4"><a href="intro.html#cb3-4" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
+<span id="cb3-5"><a href="intro.html#cb3-5" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;rpradosiqueira/brazilmaps&quot;</span>)</span>
+<span id="cb3-6"><a href="intro.html#cb3-6" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;GADMTools&quot;</span>)</span>
+<span id="cb3-7"><a href="intro.html#cb3-7" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rcrossref&quot;</span>)</span></code></pre></div>
+</div>
+<div id="loading-r-packages" class="section level3 hasAnchor" number="1.12.6">
+<h3><span class="header-section-number">1.12.6</span> Loading R Packages<a href="intro.html#loading-r-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>sf</code>, <code>sos</code>, <code>tmap</code>, <code>devtools</code>, <code>brazilmaps</code>, <code>GADMTools</code> and <code>rcrossref</code> packages are loaded with the <code>library</code> function in the R console.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="intro.html#cb4-1" tabindex="-1"></a><span class="fu">library</span>(sf) </span>
+<span id="cb4-2"><a href="intro.html#cb4-2" tabindex="-1"></a><span class="fu">library</span>(sos)</span>
+<span id="cb4-3"><a href="intro.html#cb4-3" tabindex="-1"></a><span class="fu">library</span>(tmap)</span>
+<span id="cb4-4"><a href="intro.html#cb4-4" tabindex="-1"></a><span class="fu">library</span>(brazilmaps)</span>
+<span id="cb4-5"><a href="intro.html#cb4-5" tabindex="-1"></a><span class="fu">library</span>(GADMTools)</span>
+<span id="cb4-6"><a href="intro.html#cb4-6" tabindex="-1"></a><span class="fu">library</span>(rcrossref)</span></code></pre></div>
+</div>
+<div id="evaluating-information-about-computer-programs-and-r-packages-used" class="section level3 hasAnchor" number="1.12.7">
+<h3><span class="header-section-number">1.12.7</span> Evaluating information about computer programs and R packages used<a href="intro.html#evaluating-information-about-computer-programs-and-r-packages-used" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>sf</code> package is installed and enabled to evaluate information about computer programs and R packages used in writing the book.</p>
+<p>Using the <code>print(version)</code> function we can evaluate information about the operating system and version of R used.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="intro.html#cb5-1" tabindex="-1"></a><span class="fu">print</span>(version)</span></code></pre></div>
+<p>The version of windows used, the base R packages, as well as other R packages installed on the computer is obtained with the <code>print(sessionInfo())</code> function.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="intro.html#cb6-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">sessionInfo</span>())</span></code></pre></div>
+<p>The installation directory of R packages on the computer is evaluated using the <code>print(.libPaths())</code> function.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="intro.html#cb7-1" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">.libPaths</span>())</span></code></pre></div>
+<p>The <code>packageVersion()</code> function is used to evaluate the version of a specific R package installed on the computer, in this case the version of the sf package is taken.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="intro.html#cb8-1" tabindex="-1"></a><span class="fu">packageVersion</span>(<span class="st">&quot;sf&quot;</span>)</span></code></pre></div>
+</div>
+<div id="evaluate-the-existence-of-an-r-package-with-keywords" class="section level3 hasAnchor" number="1.12.8">
+<h3><span class="header-section-number">1.12.8</span> Evaluate the existence of an R package with keywords<a href="intro.html#evaluate-the-existence-of-an-r-package-with-keywords" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using the <code>findFn()</code> function it is possible to perform searches on existing packages on a subject topic of interest, in this case, with the keywords “gis” and “spatial”, 80 items were found in 2021.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="intro.html#cb9-1" tabindex="-1"></a><span class="fu">findFn</span>(<span class="st">&quot;gis spatial&quot;</span>)</span></code></pre></div>
+</div>
+<div id="access-crossref-to-search-for-publications-using-keywords" class="section level3 hasAnchor" number="1.12.9">
+<h3><span class="header-section-number">1.12.9</span> Access Crossref to search for publications using keywords<a href="intro.html#access-crossref-to-search-for-publications-using-keywords" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using the <code>cr_works</code> function it is possible to perform searches on existing publications on a subject topic of interest, in this case, with the keyword “geocomputation”, 398 items were found.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="intro.html#cb10-1" tabindex="-1"></a>geo <span class="ot">&lt;-</span> <span class="fu">cr_works</span>(<span class="at">query =</span> <span class="st">&quot;geocomputation&quot;</span>)</span>
+<span id="cb10-2"><a href="intro.html#cb10-2" tabindex="-1"></a>geo</span>
+<span id="cb10-3"><a href="intro.html#cb10-3" tabindex="-1"></a><span class="co"># $meta</span></span>
+<span id="cb10-4"><a href="intro.html#cb10-4" tabindex="-1"></a><span class="co">#  total_results   search_terms start_index items_per_page</span></span>
+<span id="cb10-5"><a href="intro.html#cb10-5" tabindex="-1"></a><span class="co"># 1           398 geocomputation           0             20</span></span>
+<span id="cb10-6"><a href="intro.html#cb10-6" tabindex="-1"></a>geo[[<span class="st">&quot;data&quot;</span>]][[<span class="st">&quot;url&quot;</span>]] <span class="co"># Only the first 4 items with doi url</span></span>
+<span id="cb10-7"><a href="intro.html#cb10-7" tabindex="-1"></a><span class="co"># [1] &quot;https://doi.org/10.1201/b17091-8&quot;  &quot;https://doi.org/10.1201/b17091-13&quot;              </span></span>
+<span id="cb10-8"><a href="intro.html#cb10-8" tabindex="-1"></a><span class="co"># [3] &quot;https://doi.org/10.1201/b17091-26&quot; &quot;https://doi.org/10.1201/b17091-20&quot;              </span></span>
+<span id="cb10-9"><a href="intro.html#cb10-9" tabindex="-1"></a><span class="co">#...</span></span></code></pre></div>
+</div>
+<div id="create-bibtex-citations" class="section level3 hasAnchor" number="1.12.10">
+<h3><span class="header-section-number">1.12.10</span> Create BibTeX citations<a href="intro.html#create-bibtex-citations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A BibTeX citation can be created for R packages using the <code>write_bib</code> function from the <code>knitr</code> package <span class="citation">(<a href="#ref-xie2018knitr">Xie 2018</a>, <a href="#ref-R-knitr2023r">2023</a>, <a href="#ref-knitr2015r">2015</a>)</span>. As an example, we created the citation for the <code>rcrossref</code> package. Another option is to use the <code>utils</code> package <span class="citation">(<a href="#ref-R-citation">R Core Team 2023</a>)</span>, <code>toBibtex</code>, and <code>citation</code> functions to obtain the citation of an R package in BibTeX or LaTeX.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="intro.html#cb11-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">write_bib</span>(<span class="st">&quot;rcrossref&quot;</span>)</span>
+<span id="cb11-2"><a href="intro.html#cb11-2" tabindex="-1"></a><span class="co"># @Manual{R-rcrossref,</span></span>
+<span id="cb11-3"><a href="intro.html#cb11-3" tabindex="-1"></a><span class="co">#  title = {rcrossref: Client for Various CrossRef &#39;APIs&#39;},</span></span>
+<span id="cb11-4"><a href="intro.html#cb11-4" tabindex="-1"></a><span class="co">#  author = {Scott Chamberlain and Hao Zhu and Najko Jahn and Carl Boettiger and</span></span>
+<span id="cb11-5"><a href="intro.html#cb11-5" tabindex="-1"></a><span class="co"># Karthik Ram},</span></span>
+<span id="cb11-6"><a href="intro.html#cb11-6" tabindex="-1"></a><span class="co">#  year = {2022},</span></span>
+<span id="cb11-7"><a href="intro.html#cb11-7" tabindex="-1"></a><span class="co">#  note = {R package version 1.2.0, </span></span>
+<span id="cb11-8"><a href="intro.html#cb11-8" tabindex="-1"></a><span class="co"># https://github.com/ropensci/rcrossref},</span></span>
+<span id="cb11-9"><a href="intro.html#cb11-9" tabindex="-1"></a><span class="co">#  url = {https://docs.ropensci.org/rcrossref/},}</span></span>
+<span id="cb11-10"><a href="intro.html#cb11-10" tabindex="-1"></a><span class="fu">toBibtex</span>(<span class="fu">citation</span>(<span class="st">&quot;dismo&quot;</span>))</span>
+<span id="cb11-11"><a href="intro.html#cb11-11" tabindex="-1"></a><span class="co"># @Manual{R-dismo,</span></span>
+<span id="cb11-12"><a href="intro.html#cb11-12" tabindex="-1"></a><span class="co">#  title = {dismo: Species Distribution Modeling},</span></span>
+<span id="cb11-13"><a href="intro.html#cb11-13" tabindex="-1"></a><span class="co">#  author = {Robert J. Hijmans and Steven Phillips and John Leathwick and Jane Elith},</span></span>
+<span id="cb11-14"><a href="intro.html#cb11-14" tabindex="-1"></a><span class="co">#  year = {2024},</span></span>
+<span id="cb11-15"><a href="intro.html#cb11-15" tabindex="-1"></a><span class="co">#  note = {R package version 1.3-16},</span></span>
+<span id="cb11-16"><a href="intro.html#cb11-16" tabindex="-1"></a><span class="co">#  url = {https://CRAN.R-project.org/package=dismo},}</span></span></code></pre></div>
+</div>
+<div id="mapping-and-accessing-attribute-data-in-the-globe" class="section level3 hasAnchor" number="1.12.11">
+<h3><span class="header-section-number">1.12.11</span> Mapping and accessing attribute data in the globe<a href="intro.html#mapping-and-accessing-attribute-data-in-the-globe" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>After installing the tmap package, a World dataset is accessed with the <code>data</code> function and then mapped with the <code>qtm</code> function to generate a boundary division map (Figure <a href="intro.html#fig:fig12a">1.12</a>).</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="intro.html#cb12-1" tabindex="-1"></a><span class="fu">data</span>(World) <span class="co"># Access data</span></span>
+<span id="cb12-2"><a href="intro.html#cb12-2" tabindex="-1"></a><span class="fu">qtm</span>(World) <span class="co"># Map </span></span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig12a"></span>
+<embed src="assets/img1/world.pdf" title="World map with country borders obtained with the qtm function." width="100%" height="500px" type="application/pdf" />
+<p class="caption">
+FIGURE 1.12: World map with country borders obtained with the qtm function.
+</p>
+</div>
+<p>The attribute table and some characteristics of the geometry type and coordinate system (CRS) for polygons are accessed in the first 10 lines of the file:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="intro.html#cb13-1" tabindex="-1"></a>World</span>
+<span id="cb13-2"><a href="intro.html#cb13-2" tabindex="-1"></a><span class="co"># Simple feature collection with 177 features and 15 fields</span></span>
+<span id="cb13-3"><a href="intro.html#cb13-3" tabindex="-1"></a><span class="co"># Geometry type: MULTIPOLYGON</span></span>
+<span id="cb13-4"><a href="intro.html#cb13-4" tabindex="-1"></a><span class="co"># Dimension:     XY</span></span>
+<span id="cb13-5"><a href="intro.html#cb13-5" tabindex="-1"></a><span class="co"># Bounding box:  xmin: -180 ymin: -89.9 xmax: 180 ymax: 83.64513</span></span>
+<span id="cb13-6"><a href="intro.html#cb13-6" tabindex="-1"></a><span class="co"># Geodetic CRS:  WGS 84</span></span>
+<span id="cb13-7"><a href="intro.html#cb13-7" tabindex="-1"></a><span class="co"># ...</span></span></code></pre></div>
+<p>The table attribute names are accessed with the <code>names</code> function.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="intro.html#cb14-1" tabindex="-1"></a><span class="fu">names</span>(World)</span>
+<span id="cb14-2"><a href="intro.html#cb14-2" tabindex="-1"></a><span class="co"># [1] &quot;iso_a3&quot;       &quot;name&quot;         &quot;sovereignt&quot;   &quot;continent&quot;    &quot;area&quot;       </span></span>
+<span id="cb14-3"><a href="intro.html#cb14-3" tabindex="-1"></a><span class="co"># &quot;pop_est&quot;      &quot;pop_est_dens&quot; &quot;economy&quot;     </span></span>
+<span id="cb14-4"><a href="intro.html#cb14-4" tabindex="-1"></a><span class="co"># [9] &quot;income_grp&quot;   &quot;gdp_cap_est&quot;  &quot;life_exp&quot;     &quot;well_being&quot;   &quot;footprint&quot; </span></span>
+<span id="cb14-5"><a href="intro.html#cb14-5" tabindex="-1"></a><span class="co"># &quot;inequality&quot;   &quot;HPI&quot;          &quot;geometry&quot; </span></span></code></pre></div>
+<p>A Choropleth map of the continents is made with the <code>qtm</code> function and filling in the data column of interest, in this case the variable continent (Figure <a href="intro.html#fig:fig13a">1.13</a>).</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="intro.html#cb15-1" tabindex="-1"></a><span class="fu">qtm</span>(World, <span class="at">fill=</span><span class="st">&quot;continent&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig13a"></span>
+<embed src="assets/img1/worldfill.pdf" title="Choropleth world map of countries by continent." width="100%" height="500px" type="application/pdf" />
+<p class="caption">
+FIGURE 1.13: Choropleth world map of countries by continent.
+</p>
+</div>
+</div>
+</div>
+<div id="research-suggestion" class="section level2 hasAnchor" number="1.13">
+<h2><span class="header-section-number">1.13</span> Research suggestion<a href="intro.html#research-suggestion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Activities that can be used or adapted by the student are proposed for the development of scientific research on environmental geocomputation with R are suggested.</p>
+<ol style="list-style-type: decimal">
+<li>Selection of problem to be studied. The problem can be defined by an application in a rural or urban geographic region, as well as about the development and evaluation of a software for a specific purpose. In the choice of problem it is important that the analyst has previous experience with the problem or has information obtained <em>in situ</em>, so that it is possible to develop the work during the duration of the geoprocessing course.</li>
+</ol>
+</div>
+<div id="solved-exercises" class="section level2 hasAnchor" number="1.14">
+<h2><span class="header-section-number">1.14</span> Solved exercises<a href="intro.html#solved-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercise-1" class="section level3 hasAnchor" number="1.14.1">
+<h3><span class="header-section-number">1.14.1</span> Exercise 1<a href="intro.html#exercise-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Explain how to start a practical work in geocomputation for geographic analysis.</p>
+<p>A: A geocomputation project starts first looking for an application of interest and then evaluate what has already been done on the subject in journal search systems, such as science direct, and in file search sites by specific themes, such as Google Scholar. The computational part of the practical work can be done using R software and R packages for geographic analysis or other freely available GUI languages and systems, such as SAGA GIS.</p>
+</div>
+</div>
+<div id="homework" class="section level2 hasAnchor" number="1.15">
+<h2><span class="header-section-number">1.15</span> Homework<a href="intro.html#homework" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="create-a-polygon-characterizing-an-area-of-interest" class="section level3 hasAnchor" number="1.15.1">
+<h3><span class="header-section-number">1.15.1</span> Create a polygon characterizing an area of interest<a href="intro.html#create-a-polygon-characterizing-an-area-of-interest" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The objective of the homework assignment is to create a polygon characterizing an area of interest that can be used in the practical work of the subject. The polygon should be created in Google Earth by drawing it on top of a remote sensing image with very high spatial resolution. This enables observation of details around the area where the polygon was created. After creating the polygon in Google Earth, configuring a closed geometric figure, it must be imported into R and mapped to make a first map in the course. Suggested systematic steps to perform the task are given below.</p>
+</div>
+<div id="defining-geographical-region-from-polygon-drawn-in-google-earth" class="section level3 hasAnchor" number="1.15.2">
+<h3><span class="header-section-number">1.15.2</span> Defining geographical region from polygon drawn in Google Earth<a href="intro.html#defining-geographical-region-from-polygon-drawn-in-google-earth" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A polygon created in Google Earth with the <code>KML</code> extension can be imported into R as a vector that refers to an object or remote sensing process defined in relation to some location on Earth by creating a polygon drawn on top of the target of interest, as in a color composite satellite image.</p>
+<p>A version of Google Earth Pro for Windows can be obtained from <a href="https://www.google.com/earth/versions/#download-pro"><strong>download</strong></a>.</p>
+<p>To create a polygon in Google Earth, (1) open Google Earth. (2) Go to a location on the map. (3) Above the map, click Add Path. (4) To add a shape, click <code>Add Polygon</code>. (5)
+A <code>New Polygon</code> dialog box will appear. (6) To draw the shape you want using connected lines, click on a starting point on the map and drag it. (7) Click on an end point to close the polygon. Once you have a closed polygon geometry, you can calculate the area of the polygon by going to <code>Tools</code> &lt;- <code>Ruler</code>. However, calculating the area is not our objective at the moment. (8) Enter a description and properties for the polygon. The polygon will be created as a layer in the left menu of Google Earth. (9) Click on the polygon layer created with the right mouse button and export the file with the extension <code>nameoffile.kml</code> with the option <code>save place as</code>. (10) Click on <code>save</code>.</p>
+</div>
+<div id="mapping-kml-polygons-in-r" class="section level3 hasAnchor" number="1.15.3">
+<h3><span class="header-section-number">1.15.3</span> Mapping KML polygons in R<a href="intro.html#mapping-kml-polygons-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="packages-used" class="section level3 hasAnchor" number="1.15.4">
+<h3><span class="header-section-number">1.15.4</span> Packages used<a href="intro.html#packages-used" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The R software is used as an example, but other software can be used to perform this task.</p>
+<p>The <code>library</code> function in the R console is used to load the packages needed for this data analysis.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="intro.html#cb16-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb16-2"><a href="intro.html#cb16-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb16-3"><a href="intro.html#cb16-3" tabindex="-1"></a><span class="fu">library</span>(mapview)</span>
+<span id="cb16-4"><a href="intro.html#cb16-4" tabindex="-1"></a><span class="co"># GDAL version &gt;= 3.1.0 | setting mapviewOptions(fgb = TRUE)</span></span>
+<span id="cb16-5"><a href="intro.html#cb16-5" tabindex="-1"></a><span class="fu">library</span>(brazilmaps)</span></code></pre></div>
+</div>
+<div id="import-kml-file-into-r" class="section level3 hasAnchor" number="1.15.5">
+<h3><span class="header-section-number">1.15.5</span> Import KML file into R<a href="intro.html#import-kml-file-into-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Polygon geometries related to the boundaries created on very high spatial resolution images from Google Earth are used. The files are imported into R using the <code>st_read</code> function.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="intro.html#cb17-1" tabindex="-1"></a>L29 <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;C:/TCC/VitorFerreira/Lavoura_29.kml&quot;</span>) </span>
+<span id="cb17-2"><a href="intro.html#cb17-2" tabindex="-1"></a><span class="fu">head</span>(L29)</span>
+<span id="cb17-3"><a href="intro.html#cb17-3" tabindex="-1"></a><span class="co"># Simple feature collection with 1 feature and 2 fields</span></span>
+<span id="cb17-4"><a href="intro.html#cb17-4" tabindex="-1"></a><span class="co"># Geometry type: POLYGON</span></span>
+<span id="cb17-5"><a href="intro.html#cb17-5" tabindex="-1"></a><span class="co"># Dimension:     XYZ</span></span>
+<span id="cb17-6"><a href="intro.html#cb17-6" tabindex="-1"></a><span class="co"># Bounding box:  xmin: -44.96336 ymin: -21.22896 xmax: -44.96173 ymax: -21.22843</span></span>
+<span id="cb17-7"><a href="intro.html#cb17-7" tabindex="-1"></a><span class="co"># z_range:       zmin: 0 zmax: 0</span></span>
+<span id="cb17-8"><a href="intro.html#cb17-8" tabindex="-1"></a><span class="co"># Geodetic CRS:  WGS 84</span></span>
+<span id="cb17-9"><a href="intro.html#cb17-9" tabindex="-1"></a><span class="co">#        Name Description                       geometry</span></span>
+<span id="cb17-10"><a href="intro.html#cb17-10" tabindex="-1"></a><span class="co"># 1 Lavoura 29             POLYGON Z ((-44.96173 -21.2...</span></span>
+<span id="cb17-11"><a href="intro.html#cb17-11" tabindex="-1"></a>L36 <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;C:/TCC/VitorFerreira/Lavoura_36.kml&quot;</span>) </span>
+<span id="cb17-12"><a href="intro.html#cb17-12" tabindex="-1"></a><span class="fu">head</span>(L36)</span>
+<span id="cb17-13"><a href="intro.html#cb17-13" tabindex="-1"></a><span class="co"># Simple feature collection with 1 feature and 2 fields</span></span>
+<span id="cb17-14"><a href="intro.html#cb17-14" tabindex="-1"></a><span class="co"># Geometry type: POLYGON</span></span>
+<span id="cb17-15"><a href="intro.html#cb17-15" tabindex="-1"></a><span class="co"># Dimension:     XYZ</span></span>
+<span id="cb17-16"><a href="intro.html#cb17-16" tabindex="-1"></a><span class="co"># Bounding box:  xmin: -44.96357 ymin: -21.23146 xmax: -44.96134 ymax: -21.22897</span></span>
+<span id="cb17-17"><a href="intro.html#cb17-17" tabindex="-1"></a><span class="co"># z_range:       zmin: 0 zmax: 0</span></span>
+<span id="cb17-18"><a href="intro.html#cb17-18" tabindex="-1"></a><span class="co"># Geodetic CRS:  WGS 84</span></span>
+<span id="cb17-19"><a href="intro.html#cb17-19" tabindex="-1"></a><span class="co">#        Name Description                       geometry</span></span>
+<span id="cb17-20"><a href="intro.html#cb17-20" tabindex="-1"></a><span class="co"># 1 Lavoura 36             POLYGON Z ((-44.96134 -21.2...</span></span></code></pre></div>
+</div>
+<div id="remove-the-z-dimension" class="section level3 hasAnchor" number="1.15.6">
+<h3><span class="header-section-number">1.15.6</span> Remove the Z dimension<a href="intro.html#remove-the-z-dimension" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Z geometry obtained in the polygon is not needed. The <code>st_zm</code> function is used with the <code>drop=TRUE</code> argument in order to remove the Z dimension from the file, which is necessary for subsequent mapping.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="intro.html#cb18-1" tabindex="-1"></a>L29zm <span class="ot">&lt;-</span> <span class="fu">st_zm</span>(L29, <span class="at">drop =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-2"><a href="intro.html#cb18-2" tabindex="-1"></a>L29zm</span>
+<span id="cb18-3"><a href="intro.html#cb18-3" tabindex="-1"></a><span class="co"># Simple feature collection with 1 feature and 2 fields</span></span>
+<span id="cb18-4"><a href="intro.html#cb18-4" tabindex="-1"></a><span class="co"># Geometry type: POLYGON</span></span>
+<span id="cb18-5"><a href="intro.html#cb18-5" tabindex="-1"></a><span class="co"># Dimension:     XY</span></span>
+<span id="cb18-6"><a href="intro.html#cb18-6" tabindex="-1"></a><span class="co"># Bounding box:  xmin: -44.96336 ymin: -21.22896 xmax: -44.96173 ymax: -21.22843</span></span>
+<span id="cb18-7"><a href="intro.html#cb18-7" tabindex="-1"></a><span class="co"># Geodetic CRS:  WGS 84</span></span>
+<span id="cb18-8"><a href="intro.html#cb18-8" tabindex="-1"></a><span class="co">#        Name Description                       geometry</span></span>
+<span id="cb18-9"><a href="intro.html#cb18-9" tabindex="-1"></a><span class="co"># 1 Lavoura 29             POLYGON ((-44.96173 -21.228...</span></span>
+<span id="cb18-10"><a href="intro.html#cb18-10" tabindex="-1"></a>L36zm <span class="ot">&lt;-</span> <span class="fu">st_zm</span>(L36, <span class="at">drop =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-11"><a href="intro.html#cb18-11" tabindex="-1"></a>L36zm</span>
+<span id="cb18-12"><a href="intro.html#cb18-12" tabindex="-1"></a><span class="co"># Simple feature collection with 1 feature and 2 fields</span></span>
+<span id="cb18-13"><a href="intro.html#cb18-13" tabindex="-1"></a><span class="co"># Geometry type: POLYGON</span></span>
+<span id="cb18-14"><a href="intro.html#cb18-14" tabindex="-1"></a><span class="co"># Dimension:     XY</span></span>
+<span id="cb18-15"><a href="intro.html#cb18-15" tabindex="-1"></a><span class="co"># Bounding box:  xmin: -44.96357 ymin: -21.23146 xmax: -44.96134 ymax: -21.22897</span></span>
+<span id="cb18-16"><a href="intro.html#cb18-16" tabindex="-1"></a><span class="co"># Geodetic CRS:  WGS 84</span></span>
+<span id="cb18-17"><a href="intro.html#cb18-17" tabindex="-1"></a><span class="co">#        Name Description                       geometry</span></span>
+<span id="cb18-18"><a href="intro.html#cb18-18" tabindex="-1"></a><span class="co"># 1 Lavoura 36             POLYGON ((-44.96134 -21.229...</span></span></code></pre></div>
+</div>
+<div id="mapping-the-polygons" class="section level3 hasAnchor" number="1.15.7">
+<h3><span class="header-section-number">1.15.7</span> Mapping the polygons<a href="intro.html#mapping-the-polygons" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>mapview</code> function is used to map coffee crops on the campus of the Federal University of Lavras, Brazil. A template from the OpenStreetMap database is used as a geovisualization option added to the performed mapping (Figure <a href="intro.html#fig:fig24a">1.14</a>).</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="intro.html#cb19-1" tabindex="-1"></a><span class="fu">mapview</span>(<span class="fu">list</span>(L29zm, L36zm), <span class="at">col.regions =</span> <span class="fu">list</span>(<span class="st">&quot;green&quot;</span>, <span class="st">&quot;DarkGreen&quot;</span>), </span>
+<span id="cb19-2"><a href="intro.html#cb19-2" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">list</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;black&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig24a"></span>
+<img src="assets/imgTarefa/lavouras2936.png" alt="Mapping coffee crops using geocomputation techniques in Google Earth and R." width="100%" />
+<p class="caption">
+FIGURE 1.14: Mapping coffee crops using geocomputation techniques in Google Earth and R.
+</p>
+</div>
+</div>
+<div id="convert-polygons-into-a-single-file" class="section level3 hasAnchor" number="1.15.8">
+<h3><span class="header-section-number">1.15.8</span> Convert polygons into a single file<a href="intro.html#convert-polygons-into-a-single-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The polygons are converted into a single file of simple polygon features with attributes. The <code>bind_rows</code> function of the <code>dplyr</code> package is used to list all the polygons in a single <code>sf</code> file.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="intro.html#cb20-1" tabindex="-1"></a>single_sf <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">bind_rows</span>(<span class="fu">list</span>(L29zm, L36zm))</span></code></pre></div>
+<p>The columns <code>id</code> and <code>name</code> are created and the bracket operator is used to select only the columns created and the geometry in a single file called <code>polsf</code>. This polygon is used as base for subsequent mappings.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="intro.html#cb21-1" tabindex="-1"></a>single_sf<span class="sc">$</span>id <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span>
+<span id="cb21-2"><a href="intro.html#cb21-2" tabindex="-1"></a>single_sf<span class="sc">$</span>name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Lavoura 36&quot;</span>, <span class="st">&quot;Lavoura 29&quot;</span>)</span>
+<span id="cb21-3"><a href="intro.html#cb21-3" tabindex="-1"></a>single_sf</span>
+<span id="cb21-4"><a href="intro.html#cb21-4" tabindex="-1"></a><span class="co"># Simple feature collection with 2 features and 4 fields</span></span>
+<span id="cb21-5"><a href="intro.html#cb21-5" tabindex="-1"></a><span class="co"># Geometry type: POLYGON</span></span>
+<span id="cb21-6"><a href="intro.html#cb21-6" tabindex="-1"></a><span class="co"># Dimension:     XY</span></span>
+<span id="cb21-7"><a href="intro.html#cb21-7" tabindex="-1"></a><span class="co"># Bounding box:  xmin: -44.96357 ymin: -21.23146 xmax: -44.96134 ymax: -21.22843</span></span>
+<span id="cb21-8"><a href="intro.html#cb21-8" tabindex="-1"></a><span class="co"># Geodetic CRS:  WGS 84</span></span>
+<span id="cb21-9"><a href="intro.html#cb21-9" tabindex="-1"></a><span class="co">#        Name Description                       geometry id       name</span></span>
+<span id="cb21-10"><a href="intro.html#cb21-10" tabindex="-1"></a><span class="co"># 1 Lavoura 29             POLYGON ((-44.96173 -21.228...  1 Lavoura 36</span></span>
+<span id="cb21-11"><a href="intro.html#cb21-11" tabindex="-1"></a><span class="co"># 2 Lavoura 36             POLYGON ((-44.96134 -21.229...  2 Lavoura 29</span></span></code></pre></div>
+</div>
+<div id="export-the-polygon-as-esri-shapefile" class="section level3 hasAnchor" number="1.15.9">
+<h3><span class="header-section-number">1.15.9</span> Export the polygon as ESRI shapefile<a href="intro.html#export-the-polygon-as-esri-shapefile" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Discrete vector objects with a geographic database are exported to the directory of interest with the <code>st_write</code> function and the file name <code>pols</code>.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="intro.html#cb22-1" tabindex="-1"></a><span class="fu">st_write</span>(single_sf, <span class="at">dsn =</span> <span class="st">&quot;C:/Aulas/2021_2/GEO/shp/pols.shp&quot;</span>, <span class="at">layer =</span> <span class="st">&quot;pols.shp&quot;</span>, <span class="at">driver =</span> <span class="st">&quot;ESRI Shapefile&quot;</span>)</span>
+<span id="cb22-2"><a href="intro.html#cb22-2" tabindex="-1"></a><span class="co"># Warning: Field names abbreviated for ESRI Shapefile driverWriting layer `pols&#39; </span></span>
+<span id="cb22-3"><a href="intro.html#cb22-3" tabindex="-1"></a><span class="co"># to data source #`C:/Aulas/2021_2/GEO/shp/pols.shp&#39; using driver `ESRI Shapefile&#39;</span></span>
+<span id="cb22-4"><a href="intro.html#cb22-4" tabindex="-1"></a><span class="co"># Warning: GDAL Message 6: Normalized/laundered field name: &#39;name&#39; to &#39;name_1&#39;</span></span>
+<span id="cb22-5"><a href="intro.html#cb22-5" tabindex="-1"></a><span class="co"># Writing 2 features with 4 fields and geometry type Polygon.</span></span></code></pre></div>
+
+</div>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Alves2020humanprogress" class="csl-entry">
+Alves, Marcelo Carvalho, Luiz Gonsaga Carvalho, Humberto Alves Barbosa, Luciana Sanches, Marcelo Silva Oliveira, Daniel Furtado Ferreira, and Sabrina Soares Silva. 2020. <span>“<span class="nocase">Human progress and drought sensitivity behavior</span>.”</span> <em>Science of The Total Environment</em> 702 (February): 134966. <a href="https://doi.org/10.1016/j.scitotenv.2019.134966">https://doi.org/10.1016/j.scitotenv.2019.134966</a>.
+</div>
+<div id="ref-R-Appelhans2020mapview" class="csl-entry">
+Appelhans, Tim, Florian Detsch, Christoph Reudenbach Stefan Woellauer, Spaska Forteva, Thomas Nauss, Edzer Pebesma, Kenton Russell, et al. 2020. <em><span class="nocase">mapview: Interactive Viewing of Spatial Data in R</span></em>. <a href="https://github.com/r-spatial/mapview">https://github.com/r-spatial/mapview</a>.
+</div>
+<div id="ref-Bivand2013appliedspatial" class="csl-entry">
+Bivand, Roger S., Edzer Pebesma, and Virgilio Gómez-Rubio. 2013. <em><span class="nocase">Applied Spatial Data Analysis with R</span></em>. 2nd ed. New York, NY: Springer New York. <a href="https://doi.org/10.1007/978-1-4614-7618-4">https://doi.org/10.1007/978-1-4614-7618-4</a>.
+</div>
+<div id="ref-R-Bivand2021rgdal" class="csl-entry">
+Bivand, Roger, Tim Keitt, Barry Rowlingson, Edzer Pebesma, Michael Sumner, Robert Hijmans, Daniel Baston, et al. 2021. <em><span class="nocase">rgdal: Bindings for the ’Geospatial’ Data Abstraction Library</span></em>. <a href="http://rgdal.r-forge.r-project.org https://r-forge.r-project.org/projects/rgdal/">http://rgdal.r-forge.r-project.org https://r-forge.r-project.org/projects/rgdal/</a>.
+</div>
+<div id="ref-R-Bivand2020amaptools" class="csl-entry">
+Bivand, Roger, Nicholas Lewin-Koh, Edzer Pebesma, Eric Archer, Adrian Baddeley, Nick Bearman, Hans-Jörg Bibiko, et al. 2020. <em><span class="nocase">maptools: Tools for Handling Spatial Objects</span></em>. <a href="https://cran.r-project.org/web/packages/maptools/index.html">https://cran.r-project.org/web/packages/maptools/index.html</a>.
+</div>
+<div id="ref-R-Brenning2018RSAGA" class="csl-entry">
+Brenning, Alexander, Donovan Bangs, Marc Becker, Patrick Schratz, and Fabian Polakowski. 2018. <em><span class="nocase">RSAGA: SAGA Geoprocessing and Terrain Analysis</span></em>. <a href="https://cran.r-project.org/web/packages/RSAGA/index.html">https://cran.r-project.org/web/packages/RSAGA/index.html</a>.
+</div>
+<div id="ref-R-Brenning2018RPyGeo" class="csl-entry">
+Brenning, Alexander, Fabian Polakowski, Marc Becker, and Jannes Muenchow. 2018. <em><span class="nocase">RPyGeo: ArcGIS Geoprocessing via Python</span></em>. <a href="https://cran.r-project.org/web/packages/RPyGeo/">https://cran.r-project.org/web/packages/RPyGeo/</a>.
+</div>
+<div id="ref-Burrough1998principles" class="csl-entry">
+Burrough, Peter A., and Rachael McDonnell. 1998. <em><span class="nocase">Principles of Geographical Information Systems</span></em>. Oxford: Oxford University Press.
+</div>
+<div id="ref-Camara1998principles" class="csl-entry">
+Câmara, G., and J. S. Medeiros. 1998. <span>“<span class="nocase">Princ<span class="nocase">í</span>pios b<span class="nocase">á</span>sicos em geoprocessamento</span>.”</span> In <em>Sistema de Informa<span>ç</span><span>õ</span>es Geogr<span>á</span>ficas</em>, edited by E. E Assad, E. D.; Sano, 2nd ed., 3–11. Bras<span>í</span>lia: Embrapa.
+</div>
+<div id="ref-de2022surveying" class="csl-entry">
+Carvalho Alves, Marcelo de, and Luciana Sanches. 2022. <em>Surveying with Geomatics and r</em>. CRC Press.
+</div>
+<div id="ref-R-rcrossref" class="csl-entry">
+Chamberlain, Scott, Hao Zhu, Najko Jahn, Carl Boettiger, and Karthik Ram. 2022. <em>Rcrossref: Client for Various CrossRef ’APIs’</em>. <a href="https://docs.ropensci.org/rcrossref/">https://docs.ropensci.org/rcrossref/</a>.
+</div>
+<div id="ref-R-Cheng2021leaflet" class="csl-entry">
+Cheng, Joe, Bhaskar Karambelkar, Yihui Xie, Hadley Wickham, Kenton Russell, Kent Johnson, Barret Schloerke, et al. 2021. <em><span class="nocase">leaflet: Create Interactive Web Maps with the JavaScript ’Leaflet’ Library</span></em>. <a href="https://cran.r-project.org/web/packages/leaflet/index.html">https://cran.r-project.org/web/packages/leaflet/index.html</a>.
+</div>
+<div id="ref-R-Decorps2021GADMTools" class="csl-entry">
+Decorps, Jean Pierre. 2021. <em><span class="nocase">GADMTools: Easy Use of ’GADM’ Maps</span></em>. <a href="https://cran.r-project.org/web/packages/GADMTools">https://cran.r-project.org/web/packages/GADMTools</a>.
+</div>
+<div id="ref-Gorelick2017googleearthengine" class="csl-entry">
+Gorelick, Noel, Matt Hancher, Mike Dixon, Simon Ilyushchenko, David Thau, and Rebecca Moore. 2017. <span>“<span class="nocase">Google Earth Engine: Planetary-scale geospatial analysis for everyone</span>.”</span> <em>Remote Sensing of Environment</em> 202 (December): 18–27. <a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>.
+</div>
+<div id="ref-Goslee2011analyzingremotesensing" class="csl-entry">
+Goslee, Sarah C. 2011. <span>“<span class="nocase">Analyzing remote sensing data in R: the landsat package</span>.”</span> <em>Journal of Statistical Software</em> 43 (4): 1–25.
+</div>
+<div id="ref-R-Graves2020sos" class="csl-entry">
+Graves, Spencer, Sundar Dorai-Raj, and Romain Francois. 2020. <em><span class="nocase">sos: Search Contributed R Packages, Sort by Package</span></em>. <a href="https://cran.r-project.org/web/packages/sos/">https://cran.r-project.org/web/packages/sos/</a>.
+</div>
+<div id="ref-R-Hijmans2020raster" class="csl-entry">
+Hijmans, Robert J., Jacob van Etten, Michael Sumner, Joe Cheng, Dan Baston, Andrew Bevan, Roger Bivand, et al. 2020. <em><span class="nocase">raster: Geographic Data Analysis and Modeling</span></em>. <a href="https://rspatial.org/raster">https://rspatial.org/raster</a>.
+</div>
+<div id="ref-Jensen2012introductorygeographic" class="csl-entry">
+Jensen, John R., and Ryan R. Jensen. 2012. <em><span>Introductory Geographic Information Systems</span></em>. 1st ed. Prentice Hall.
+</div>
+<div id="ref-Kwok2018ecology" class="csl-entry">
+Kwok, R. 2018. <span>“<span class="nocase">Ecology’s remote sensing revolution</span>.”</span> <em>Nature</em>, 556.
+</div>
+<div id="ref-R-Lamigueiro2020rasterVis" class="csl-entry">
+Lamigueiro, O. P., and R. Hijmans. 2020. <em><span class="nocase">rasterVis: Visualization Methods for Raster Data</span></em>. <a href="https://cran.r-project.org/web/packages/rasterVis/">https://cran.r-project.org/web/packages/rasterVis/</a>.
+</div>
+<div id="ref-Lamigueiro2018displayingtimeseries" class="csl-entry">
+Lamigueiro, Oscar Perpinan. 2018. <em><span class="nocase">Displaying Time Series, Spatial, and Space-Time Data with R</span></em>. 2nd ed. New York: Chapman; Hall/CRC. <a href="https://doi.org/10.1201/9781315108872">https://doi.org/10.1201/9781315108872</a>.
+</div>
+<div id="ref-Lo2007conceptsandtechniques" class="csl-entry">
+Lo, Chor Pang, and Albert K. W. Yeung. 2007. <em><span class="nocase">Concepts and Techniques of Geographic Information Systems</span></em>. 2nd ed. Upper Saddle River, NJ: Pearson Prentice Hall.
+</div>
+<div id="ref-Longley2001geographicinformation" class="csl-entry">
+Longley, Paul A., Michael F. Goodchild, David J. Maguire, and David W. Rhind. 2001. <em><span class="nocase">Geographic Information Systems and Science</span></em>. Chichester: John Wiley &amp; Sons, Inc.
+</div>
+<div id="ref-Lovelace2019geocomputation" class="csl-entry">
+Lovelace, Robin, Jakub Nowosad, and Jannes Muenchow. 2019. <em><span class="nocase">Geocomputation with R</span></em>. 1st ed. Boca Raton: CRC Press.
+</div>
+<div id="ref-mccormac2012surveying" class="csl-entry">
+McCormac, Jack C, Wayne A Sarasua, and William J Davis. 2012. <em>Surveying</em>. John Wiley &amp; Sons.
+</div>
+<div id="ref-Mondello2008ASPRS" class="csl-entry">
+Mondello, C., G. Hepner, and R. M. Medina. 2008. <span>“<span>ASPRS 10 Year Remote Sensing Industry Forecast: Phase V</span>.”</span> <em>Photogrammetric Engineering &amp; Remote Sensing</em> 74 (11): 1297–1305.
+</div>
+<div id="ref-openshaw2001geocomputation" class="csl-entry">
+Openshaw, Stan, and R. J. Abrahart. 2001. <em><span>GeoComputation</span></em>. 1st ed. London: Taylor &amp; Francis.
+</div>
+<div id="ref-Pebesma2005Sclasses" class="csl-entry">
+Pebesma, Edzer, and Roger S Bivand. 2005. <span>“<span class="nocase">S classes and methods for spatial data: the sp package</span>.”</span> <em>R News</em> 5 (2): 9–13.
+</div>
+<div id="ref-R-Pebesma2021sf" class="csl-entry">
+Pebesma, Edzer, Roger Bivand, Etienne Racine, Michael Sumner, Ian Cook, Tim Keitt, Robin Lovelac, et al. 2021. <em><span class="nocase">sf: Simple Features for R</span></em>. <a href="https://cran.r-project.org/web/packages/sf/index.html">https://cran.r-project.org/web/packages/sf/index.html</a>.
+</div>
+<div id="ref-R-Pebesma2021sp" class="csl-entry">
+Pebesma, Edzer, Roger Bivand, Barry Rowlingson, Virgilio Gomez-Rubio, Robert Hijmans, Michael Sumner, Don MacQueen, et al. 2021. <em><span class="nocase">sp: Classes and Methods for Spatial Data</span></em>. <a href="https://cran.r-project.org/web/packages/sp/index.html">https://cran.r-project.org/web/packages/sp/index.html</a>.
+</div>
+<div id="ref-Pebesma2012theRsoftware" class="csl-entry">
+Pebesma, Edzer, Daniel Nüst, and Roger Bivand. 2012. <span>“<span class="nocase">The R software environment in reproducible geoscientific research</span>.”</span> <em>Eos, Transactions American Geophysical Union</em> 93 (16): 163–63. <a href="https://doi.org/10.1029/2012EO160003">https://doi.org/10.1029/2012EO160003</a>.
+</div>
+<div id="ref-R-citation" class="csl-entry">
+R Core Team. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-Rogers1995diffusion" class="csl-entry">
+Rogers, E. M. 1995. <em><span class="nocase">Diffusion of Innovations</span></em>. 4th ed. Free Press.
+</div>
+<div id="ref-R-Siqueira2017brazilmaps" class="csl-entry">
+Siqueira, Renato Prado. 2017. <em><span class="nocase">brazilmaps: Brazilian Maps from Different Geographic Levels</span></em>. <a href="https://rdrr.io/cran/brazilmaps/man/get_brmap.html">https://rdrr.io/cran/brazilmaps/man/get_brmap.html</a>.
+</div>
+<div id="ref-Tennekes2018tmappaper" class="csl-entry">
+Tennekes, Martijn. 2018. <span>“<span class="nocase">tmap : Thematic Maps in R</span>.”</span> <em>Journal of Statistical Software</em> 84 (6). <a href="https://doi.org/10.18637/jss.v084.i06">https://doi.org/10.18637/jss.v084.i06</a>.
+</div>
+<div id="ref-R-Tennekes2020tmap" class="csl-entry">
+Tennekes, Martijn, Jakub Nowosad, Joel Gombin, Sebastian Jeworutzki, Kent Russell, Richard Zijdeman, John Clouse, Robin Lovelace, and Jannes Muenchow. 2020. <em><span class="nocase">tmap: Thematic Maps</span></em>. <a href="https://cran.r-project.org/web/packages/tmap/%0Aindex.html">https://cran.r-project.org/web/packages/tmap/%0Aindex.html</a>.
+</div>
+<div id="ref-R-Wickham2020ggplot2" class="csl-entry">
+Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, Dewey Dunnington, and RStudio. 2020. <em><span class="nocase">ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</span></em>. <a href="https://cran.r-project.org/web/packages/ggplot2/index.html">https://cran.r-project.org/web/packages/ggplot2/index.html</a>.
+</div>
+<div id="ref-R-Wickham2021dply" class="csl-entry">
+Wickham, Hadley, Romain François, Lionel Henry, Kirill Müller, and RStudio. 2021. <em><span class="nocase">dplyr: A Grammar of Data Manipulation</span></em>. <a href="https://cran.r-project.org/web/packages/dplyr/index.html">https://cran.r-project.org/web/packages/dplyr/index.html</a>.
+</div>
+<div id="ref-R-Wickham2021devtools" class="csl-entry">
+Wickham, Hadley, Jim Hester, Winston Chang, and RStudio. 2021. <em><span class="nocase">devtools: Tools to Make Developing R Packages Easier</span></em>. <a href="https://cran.r-project.org/web/packages/devtools/index.html">https://cran.r-project.org/web/packages/devtools/index.html</a>.
+</div>
+<div id="ref-R-Wickham2021readr" class="csl-entry">
+Wickham, Hadley, Jim Hester, Romain Francois, RStudio, Jukka Jylänki, and Mikkel Jørgensen. 2021. <em><span class="nocase">readr: Read Rectangular Text Data</span></em>.
+</div>
+<div id="ref-knitr2015r" class="csl-entry">
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+</div>
+<div id="ref-xie2018knitr" class="csl-entry">
+———. 2018. <span>“Knitr: A Comprehensive Tool for Reproducible Research in r.”</span> In <em>Implementing Reproducible Research</em>, 3–31. Chapman; Hall/CRC.
+</div>
+<div id="ref-R-knitr2023r" class="csl-entry">
+———. 2023. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="preface.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/01-intro_en.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

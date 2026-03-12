@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Preface | Environmental Geocomputation with R (Classroom summary)</title>
+  <meta name="description" content="Environmental Geocomputation with R: Textbook and Lab Manual (Short version for the classroom)" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Preface | Environmental Geocomputation with R (Classroom summary)" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Environmental Geocomputation with R: Textbook and Lab Manual (Short version for the classroom)" />
+  <meta name="github-repo" content="true" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Preface | Environmental Geocomputation with R (Classroom summary)" />
+  
+  <meta name="twitter:description" content="Environmental Geocomputation with R: Textbook and Lab Manual (Short version for the classroom)" />
+  
+
+<meta name="author" content="Marcelo de Carvalho Alves" />
+
+
+<meta name="date" content="2026-03-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="intro.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Environmental Geocomputation with R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Environmental Geocomputation with R</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://www.routledge.com/Environmental-Geocomputation-with-R-Textbook-and-Lab-Manual/deCarvalhoAlves/p/book/9781041208228" target="blank">Published by CRC Press</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Environmental Geocomputation with R (Classroom summary)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="preface" class="section level1 unnumbered hasAnchor">
+<h1>Preface<a href="preface.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Geocomputation is considered a revolution following the introduction of geographic information systems. Geocomputation enables data generated by geographic information systems, remote sensing and information technology to be exploited in a better and more complete way. In addition, it is possible to exploit data information beyond the original objectives of data collection. Thus, the notion of geographic information science can be expanded towards the analysis, modeling and solution of everyday problems. Geographical science is more than the art of modern surveying, also called geoinformatics. With the use of geocomputation it is possible to work with various types of data and develop relevant geographic tools within the general context of a scientific approach to solving theoretical and practical academic problems with computer science and artificial intelligence techniques. Geocomputation is related to making useful things, containing geographic or environmental data components, modern computing technologies with a statistical, mathematical, numerical basis, as well as high-performance computing hardware.</p>
+<p>In this book, theoretical and practical principles of data manipulation and analysis with geocomputation in geographic information systems are described and exemplified in order to effectively and critically understand environmental geocomputation with R. The text presents different ways of representing and modeling geospatial data. With the approach used by the author we can understand standard entity and continuous field approaches used in geocomputation. Ways of dealing with uncertainties in spatial data analysis enabled to deal with errors and their possible effects on the results of a project. The main focus of the book is to present concepts and theoretical literature available in the field with the aim of solving or improving data analysis by including the spatial context in the results obtained. We expected to better understand the phenomena of the analyzed environment and the most important variables that should be considered when managing and changing processes in the real world according to the nature of each existing object and dynamic process. The book format is prepared for learning and research in geocomputation. In addition, theoretical and practical principles are exemplified in order to prepare students for academia with emphasis on scientific applications for project and article writing in geocomputation using big data and geographic data science. The scientific applications of geocomputation are performed with environmental attributes and agricultural variables generally lacking spatial-temporal analysis for decision making at different hierarchical levels of public and private institutions.</p>
+<p>The idea behind this book is to use classic works of geocomputation and geographic information systems literature, updating them as necessary for today’s world, using the R programming language but without losing sight of the basic concepts of the discipline. This enables to further expand the use of this bibliography with applications. We have also produced a book that serves as a laboratory manual, with the aim of supporting students in developing a project in the field of geocomputation (halfway through the course) and then writing a scientific article at the end of the course. The part on integration with clouds (Google Earth Engine) is being done with the <code>rgee</code> package, which is already covered in some chapters. In addition to the computational exercises included at the end of each chapter, homework assignments have also been created that can be used to solve geographical problems related to the environmental field. The solutions to the homework assignments are included in the laboratory manual. This was done so that dedicated readers can develop a project and write a scientific article throughout the course. Some scripts and Rmarkdown files are included in a GitHub repository for use by teachers and students who are using the <a href="https://github.com/marcelocarvalhoalves/Environmental-Geocomputation-with-R-Data-Repository"><strong>main book</strong></a> and the <a href="https://github.com/marcelocarvalhoalves/Laboratory-Manual-for-Environmental-Geocomputation-with-R-Data-Repository"><strong>laboratory manual</strong></a>.</p>
+<p>The combination of big data applications, case studies, and open source software for geocomputation makes this book fill a gap on the market. While there are competitors out there, the proposed book seems to provide complementary and in some aspects additional contents about fundamentals of geocomputation. Part of the book can be used in an undergraduate course with two hours per week, and in the case of graduate studies, it can be used with four hours per week (two hours on one day and two hours on another), also covering the chapters on project development and articles that can be used for students to learn the content by conducting scientific research in the field.</p>
+<p>It can be challenging to get an overview of alternative approaches to perform common tasks of geocomputation in R. Alternative approaches are implemented by different R libraries. This goes along with moving to new formats and paradigms. There are indeed problems with the versions of packages used and modifications to functions by some packages (e.g. discontinuation of <code>rgdal</code>, <code>sf</code> vs. <code>sp</code>, <code>terra</code> vs. <code>raster</code> vs. <code>stars</code>, <code>ggplot2</code> vs. base R plots vs. <code>tmap</code> and <code>RStoolbox</code> change versions. For example, <code>rgdal</code> was retired along with its original author, but as far as I can tell, it is being continued by the <code>sf</code> and <code>raster</code> packages. In some situations, we tried to perform the same tasks with different packages.</p>
+<p>A book on this topic is highly needed and can be used for courses in which R is used for environmental geocomputation and geoprocessing. The breadth and uniqueness of the proposed book’s niche is limited by the distribution of R in the community (Python is also emerging as an important language in this field). This book appears to provide all the necessary fundamentals in a very rigorous way. This seems to be a very valuable teaching resource and reference, perhaps even more detailed than other similar titles on the market. Our idea was to focus on well-known titles in the field, including practical geocomputation applications where these materials have certain shortcomings or are based on commercial software.</p>
+<p>Our approach is not widely used yet, given the preference of many students for GUI interface software. However, using R, we have made significant progress in international publications of articles, which is limited when using software such as QGIS and ArcGis. Python language is already well established in the field, and many do not want to stop using Python to develop existing applications in R. I see this a lot in the field of meteorology. Our intention is to continue using R even with these barriers and limitations, as it is a language developed in universities, with scientific recognition and a language that is generally close to human language, facilitating students’ understanding of the functions used. We present several practical applications in the book covering the environmental and agricultural fields, and using the laboratory manual the students can develop their work in the discipline and learn by doing.</p>
+<p>Python has been more widely adopted than R, so we believe it is better to invest in R because of its academic development approach, scientific publications, citations, and greater detail in the literature used in package development. International journals have been very receptive to articles developed using R due to its robust statistical basis. We do not intend to move forward with Python for the time being, as there is much to study, improve, and research with R. I have noticed that the marketing industry wants you to use a language because it is the most widely used in the world, but I would not choose a language solely for that reason.</p>
+<p>Considering the way R language is used can be very easy for students to assimilate it. However, we can automate the language so that it becomes more complex. This approach to automating commands will be covered in future books that are more applied to specific content. Our approach is designed for use in classrooms with computers running R and Rstudio. In class, we have been using Windows computers, but it is also possible to use R with Linux and Mac. The possibility of publishing the book online using Rstudio build options might be a good idea to facilitate the reproduction of commands by students, and also creating a repository of the book on the Internet can facilitate theoretical and practical classes on the material throughout an academic semester.</p>
+<p>The items covered in the chapters are defined in a form of constructive complexity that allows the student to develop a project using geocomputation and geospatial data and, at the end, conclude the studies with a report in the form of a scientific article or scientific review on environmental geocomputation. The chapters covered are “Introduction to Environmental Geocomputation with R” (Chapter <a href="intro.html#intro">1</a>), “Geographic Representation with Environmental Geocomputation and R” (Chapter <a href="#rep"><strong>??</strong></a>), “Geographic Database Management Systems with Environmental Geocomputation and R” (Chapter <a href="#dados"><strong>??</strong></a>), “Space-time Georeferencing with Environmental Geocomputation and R” (Chapter <a href="#proj"><strong>??</strong></a>), “Spatial Data Models with Environmental Geocomputation and R” (Chapter <a href="#model"><strong>??</strong></a>), “Space-time Geovisualization with Environmental Geocomputation and R” (Chapter <a href="#vis"><strong>??</strong></a>), “Project Elaboration with Environmental Geocomputation and R” (Chapter <a href="#project"><strong>??</strong></a>), “Vector Spatial Analysis with Environmental Geocomputation and R” (Chapter <a href="#vetor"><strong>??</strong></a>), “Raster Spatial Analysis with Environmental Geocomputation and R” (Chapter <a href="#raster"><strong>??</strong></a>), “Vector Geometric Analysis with Environmental Geocomputation and R” (Chapter <a href="#geovector"><strong>??</strong></a>), “Raster Geometric Analysis with Environmental Geocomputation and R” (Chapter <a href="#georaster"><strong>??</strong></a>), “Creating Continuous Surfaces with Environmental Geocomputation and R” (Chapter <a href="#int"><strong>??</strong></a>), “Geostatistical Analysis with Environmental Geocomputation and R” (Chapter <a href="#krig"><strong>??</strong></a>), and “Article Elaboration with Environmental Geocomputation and R” (Chapter <a href="#aplic"><strong>??</strong></a>).</p>
+
+<p class="flushright">
+Marcelo de Carvalho Alves, Lavras, 2025
+</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/yihui/bookdown-crc/edit/master/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown.pdf", "bookdown.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
